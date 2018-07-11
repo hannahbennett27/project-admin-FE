@@ -38,7 +38,9 @@ class SignIn extends Component {
           value={password}
           onChange={this.handleChange}
         />
-        <br />
+        <p>
+          Forgotten your password? <Link to={"/reset"}>Reset</Link>
+        </p>
         <button
           type="submit"
           value="Submit"
@@ -47,7 +49,6 @@ class SignIn extends Component {
         >
           Submit
         </button>
-        {error && <p>{error.message}</p>}
       </div>
     );
 
@@ -56,6 +57,7 @@ class SignIn extends Component {
         {this.renderRedirect()}
         <p>Sign In</p>
         {signInForm}
+        {error && <p>{error.message}</p>}
         <p>
           Don't have an account? <Link to={"/signup"}>Sign Up</Link>
         </p>

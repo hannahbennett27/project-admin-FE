@@ -57,7 +57,6 @@ class SignUp extends Component {
         >
           Submit
         </button>
-        {error && <p>{error.message}</p>}
       </div>
     );
 
@@ -66,6 +65,7 @@ class SignUp extends Component {
         {this.renderRedirect()}
         <p>Sign Up</p>
         {signUpForm}
+        {error && <p>{error.message}</p>}
         <p>
           Already have an account? <Link to={"/signin"}>Sign In</Link>
         </p>
