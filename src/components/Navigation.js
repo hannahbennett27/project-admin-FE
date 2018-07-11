@@ -16,6 +16,9 @@ const userNav = (
     <Link to={"/"}>
       <button>Home</button>
     </Link>
+    <Link to={"/account"}>
+      <button>Account</button>
+    </Link>
     <SignOut />
   </div>
 );

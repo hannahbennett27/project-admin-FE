@@ -39,7 +39,7 @@ class SignIn extends Component {
           onChange={this.handleChange}
         />
         <p>
-          Forgotten your password? <Link to={"/reset"}>Reset</Link>
+          Forgotten your password? <Link to={"/resetpassword"}>Reset</Link>
         </p>
         <button
           type="submit"
