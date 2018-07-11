@@ -9,15 +9,10 @@ const SignOut = () => {
   );
 };
 
-const handleSignOut = setUser => {
-  auth
-    .signOutUser()
-    // .then(() => {
-    //   setUser();
-    // })
-    .catch(err => {
-      console.log(err);
-    });
+const handleSignOut = () => {
+  auth.signOutUser().catch(err => {
+    console.log(err);
+  });
 };
 
 export default SignOut;
