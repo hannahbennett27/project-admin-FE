@@ -1,11 +1,9 @@
 import React, { Component } from "react";
 import { Redirect, Link } from "react-router-dom";
-import { auth, dbusers } from "../firebase";
+import { auth } from "../firebase";
 
-class SignUp extends Component {
+class ChangePassword extends Component {
   state = {
-    email: "",
-    schoolName: "",
     passwordOne: "",
     passwordTwo: "",
     redirect: false,
@@ -19,35 +17,15 @@ class SignUp extends Component {
   };
 
   render() {
-    const { email, schoolName, passwordOne, passwordTwo, error } = this.state;
+    const { passwordOne, passwordTwo, error } = this.state;
 
-    const inputInvalid =
-      passwordOne !== passwordTwo ||
-      email === "" ||
-      schoolName === "" ||
-      passwordOne === "";
+    const inputInvalid = passwordOne !== passwordTwo || passwordOne === "";
 
-    const signUpForm = (
+    const changePasswordForm = (
       <div>
         <input
-          type="text"
-          placeholder="Email"
-          name="email"
-          value={email}
-          onChange={this.handleChange}
-        />
-        <br />
-        <input
-          type="text"
-          placeholder="School Name"
-          name="schoolName"
-          value={schoolName}
-          onChange={this.handleChange}
-        />
-        <br />
-        <input
           type="password"
-          placeholder="Password"
+          placeholder="New Password"
           name="passwordOne"
           value={passwordOne}
           onChange={this.handleChange}
@@ -55,7 +33,7 @@ class SignUp extends Component {
         <br />
         <input
           type="password"
-          placeholder="Confirm Password"
+          placeholder="Confirm New Password"
           name="passwordTwo"
           value={passwordTwo}
           onChange={this.handleChange}
@@ -75,11 +53,11 @@ class SignUp extends Component {
     return (
       <div>
         {this.renderRedirect()}
-        <p>Sign Up</p>
-        {signUpForm}
+        <p>Change Password</p>
+        {changePasswordForm}
         {error && <p>{error.message}</p>}
         <p>
-          Already have an account? <Link to={"/signin"}>Sign In</Link>
+          <Link to={"/"}>Back</Link>
         </p>
       </div>
     );
@@ -90,16 +68,11 @@ class SignUp extends Component {
   };
 
   handleSubmit = () => {
-    const { email, schoolName, passwordOne } = this.state;
+    const { passwordOne } = this.state;
     auth
-      .createNewUser(email, passwordOne)
-      .then(newUser => {
-        dbusers.createUser(newUser.user.uid, schoolName, email);
-      })
+      .passwordUpdate(passwordOne)
       .then(() => {
         this.setState({
-          email: "",
-          schoolName: "",
           passwordOne: "",
           passwordTwo: "",
           redirect: true
@@ -111,4 +84,4 @@ class SignUp extends Component {
   };
 }
 
-export default SignUp;
+export default ChangePassword;
