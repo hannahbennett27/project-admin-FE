@@ -9,12 +9,20 @@ import SignIn from "./SignIn";
 import Account from "./Account";
 import ResetPassword from "./ResetPassword";
 import ChangePassword from "./ChangePassword";
+import GameAnalytics from "./GameAnalytics";
+import Games from "./Games";
 
 const App = () => {
   return (
     <Router>
       <div>
         <Navigation />
+        <Route
+          exact
+          path="/account/games/:gameId"
+          render={() => <GameAnalytics />}
+        />
+        <Route exact path="/account/games" render={() => <Games />} />
         <Route exact path="/account" render={() => <Account />} />
         <Route exact path="/signup" render={() => <SignUp />} />
         <Route exact path="/signin" render={() => <SignIn />} />

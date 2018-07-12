@@ -1,13 +1,16 @@
-// Get all users from Firebase database: 
+Get all users from Firebase database:
 
-/**/ src/firebase/db/users.js /**/
+src/firebase/db/users.js
 
+```js
 export const getUsers = () => db.ref("users").once("value");
+```
 
 ///////////////////////////////////////////////////////////////////////////
 
-/**/ src/components/Account.js /**/
+src/components/Account.js
 
+```js
 import { dbusers } from "../firebase";
 
 /**/
@@ -22,3 +25,4 @@ state = {
       this.setState(() => ({ users: snapshot.val() }));
     });
   }
+```

@@ -9,7 +9,6 @@ const Account = () => {
       <AuthUserContext.Consumer>
         {user => (user ? userAcc : nullUserAcc)}
       </AuthUserContext.Consumer>
-      <NewSession />
     </div>
   );
 };
@@ -20,6 +19,10 @@ const userAcc = (
     <p>
       Change password <Link to={"/changepassword"}>here</Link>
     </p>
+    <p>
+      View all game sessions <Link to={"/account/games"}>here</Link>
+    </p>
+    <NewSession />
   </div>
 );
 
