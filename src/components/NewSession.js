@@ -6,6 +6,7 @@ import AuthUserContext from "./AuthUserContext";
 class NewSession extends Component {
   state = {
     schoolYear: "",
+    sessionName: "",
     gameId: "",
     error: null
   };
@@ -17,7 +18,7 @@ class NewSession extends Component {
   };
 
   render() {
-    const { schoolYear, error } = this.state;
+    const { schoolYear, sessionName, error } = this.state;
 
     const minYear = 3;
     const maxYear = 9;
@@ -32,6 +33,14 @@ class NewSession extends Component {
             <div>
               {this.renderRedirect()}
               <p>New Session</p>
+              <input
+                type="text"
+                placeholder="Session Name"
+                name="sessionName"
+                value={sessionName}
+                onChange={this.handleChange}
+              />
+              <br />
               <input
                 type="number"
                 min={minYear}
@@ -63,13 +72,14 @@ class NewSession extends Component {
   };
 
   handleSubmit = id => {
-    const { schoolYear } = this.state;
+    const { schoolYear, sessionName } = this.state;
     dbgames
-      .createGameSession(id, schoolYear)
+      .createGameSession(id, schoolYear, sessionName)
       .then(res => {
         const gameId = res._key.path.segments[1];
         this.setState({
           schoolYear: "",
+          sessionName: "",
           gameId
         });
       })

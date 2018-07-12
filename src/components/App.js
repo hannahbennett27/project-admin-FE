@@ -20,7 +20,7 @@ const App = () => {
         <Route
           exact
           path="/account/games/:gameId"
-          render={() => <GameAnalytics />}
+          render={props => <GameAnalytics {...props} />}
         />
         <Route exact path="/account/games" render={() => <Games />} />
         <Route exact path="/account" render={() => <Account />} />

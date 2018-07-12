@@ -1,6 +1,7 @@
 import React from "react";
 import AuthUserContext from "./AuthUserContext";
 import { firebase } from "../firebase";
+import { dbusers } from "../firebase";
 
 const withAuthentication = Component => {
   class WithAuthentication extends React.Component {
@@ -9,8 +10,10 @@ const withAuthentication = Component => {
     componentDidMount() {
       firebase.auth.onAuthStateChanged(user => {
         user
-          ? this.setState(() => ({ user }))
-          : this.setState(() => ({ user: null }));
+          ? dbusers.getUserById(user.uid).then(user => {
+              this.setState({ user });
+            })
+          : this.setState({ user: null });
       });
     }
 
@@ -18,7 +21,7 @@ const withAuthentication = Component => {
       const { user } = this.state;
       return (
         <AuthUserContext.Provider value={user}>
-          <Component />
+          <Component user={this.state.user} />
         </AuthUserContext.Provider>
       );
     }
