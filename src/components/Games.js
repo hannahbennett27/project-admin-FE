@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { dbgames } from "../firebase";
+import { Link } from "react-router-dom";
 // import AuthUserContext from "./AuthUserContext";
 
 class Games extends Component {
@@ -7,17 +8,27 @@ class Games extends Component {
 
   componentDidMount() {
     const id = "cvpWn7lYliSRzrFrrwMZX73g1C32";
-    dbgames.getAllGames(id);
-    // .then(res => {
-    //   console.log(res);
-    // });
+    dbgames.getAllGames(id).then(games => {
+      this.setState({ games });
+    });
   }
 
   render() {
-    return (
+    return this.state.games ? (
       <div>
         <p>Hello Games</p>
+        {this.state.games.map(game => {
+          return (
+            <p>
+              <Link to={`/account/games/${game.gameId}`}>
+                {game.schoolId}, {game.schoolYear}, {game.gameId}
+              </Link>
+            </p>
+          );
+        })}
       </div>
+    ) : (
+      <p>loading...</p>
     );
   }
 }
