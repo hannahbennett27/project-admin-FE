@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
-import { dbgames } from '../firebase';
-import AuthUserContext from './AuthUserContext';
+import React, { Component } from "react";
+import { Redirect } from "react-router-dom";
+import { dbgames } from "../firebase";
+import AuthUserContext from "./AuthUserContext";
 
 class NewGame extends Component {
   state = {
-    schoolYear: '',
-    sessionName: '',
-    gameId: '',
+    schoolYear: "",
+    sessionName: "",
+    gameId: "",
     error: null
   };
 
@@ -55,7 +55,7 @@ class NewGame extends Component {
                 type="submit"
                 value="Submit"
                 disabled={inputInvalid}
-                onClick={() => this.handleSubmit(user.uid)}
+                onClick={() => this.handleSubmit(user.id)}
               >
                 Start
               </button>
