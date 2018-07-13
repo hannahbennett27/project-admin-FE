@@ -1,41 +1,37 @@
-import React, { Component } from "react";
+import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import { firebase } from "../firebase";
+import withAuthentication from "./withAuthentication";
 import "./App.css";
 import Navigation from "./Navigation";
 import Home from "./Home";
 import SignUp from "./SignUp";
 import SignIn from "./SignIn";
 import Account from "./Account";
+import ResetPassword from "./ResetPassword";
+import ChangePassword from "./ChangePassword";
+import GameAnalytics from "./GameAnalytics";
+import Games from "./Games";
 
-class App extends Component {
-  state = { user: null };
+const App = () => {
+  return (
+    <Router>
+      <div>
+        <Navigation />
+        <Route
+          exact
+          path="/account/games/:gameId"
+          render={props => <GameAnalytics {...props} />}
+        />
+        <Route exact path="/account/games" render={() => <Games />} />
+        <Route exact path="/account" render={() => <Account />} />
+        <Route exact path="/signup" render={() => <SignUp />} />
+        <Route exact path="/signin" render={() => <SignIn />} />
+        <Route exact path="/resetpassword" render={() => <ResetPassword />} />
+        <Route exact path="/changepassword" render={() => <ChangePassword />} />
+        <Route exact path="/" render={() => <Home />} />
+      </div>
+    </Router>
+  );
+};
 
-  componentDidMount() {
-    firebase.auth.onAuthStateChanged(user => {
-      user
-        ? this.setState(() => ({ user }))
-        : this.setState(() => ({ user: null }));
-    });
-  }
-
-  render() {
-    return (
-      <Router>
-        <div>
-          <Navigation user={this.state.user} />
-          <Route
-            exact
-            path="/account"
-            render={() => <Account user={this.state.user} />}
-          />
-          <Route exact path="/signup" render={() => <SignUp />} />
-          <Route exact path="/signin" render={() => <SignIn />} />
-          <Route exact path="/" render={() => <Home />} />
-        </div>
-      </Router>
-    );
-  }
-}
-
-export default App;
+export default withAuthentication(App);
