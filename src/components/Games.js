@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import { dbgames } from "../firebase";
 import { Link } from "react-router-dom";
-// import AuthUserContext from "./AuthUserContext";
+import AuthUserContext from "./AuthUserContext";
 
 class Games extends Component {
   state = { games: null };
 
   componentDidMount() {
-    const id = "cvpWn7lYliSRzrFrrwMZX73g1C32";
+    const id = this.props.user.id;
     dbgames.getAllGames(id).then(games => {
       this.setState({ games });
     });
@@ -33,4 +33,10 @@ class Games extends Component {
   }
 }
 
-export default Games;
+export default props => {
+  return (
+    <AuthUserContext.Consumer>
+      {user => <Games {...props} user={user} />}
+    </AuthUserContext.Consumer>
+  );
+};
