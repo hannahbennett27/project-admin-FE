@@ -1,7 +1,8 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import AuthUserContext from './AuthUserContext';
-import NewGame from './NewGame';
+import React from "react";
+import { Link } from "react-router-dom";
+import AuthUserContext from "./AuthUserContext";
+import NewGame from "./NewGame";
+import Header from "./Header";
 
 const Account = () => {
   return (
@@ -15,6 +16,7 @@ const Account = () => {
 
 const userAcc = (
   <div>
+    <Header />
     <p>Account Page</p>
     <p>
       Change password <Link to={'/changepassword'}>here</Link>

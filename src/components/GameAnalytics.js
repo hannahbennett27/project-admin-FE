@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { dbgames } from "../firebase";
 import AuthUserContext from "./AuthUserContext";
+import Header from "./Header";
 
 class GameAnalytics extends Component {
   state = {
@@ -15,13 +16,14 @@ class GameAnalytics extends Component {
   }
 
   render() {
-    const { schoolId, schoolYear } = this.state.game;
+    const { schoolYear } = this.state.game;
     return (
       <div>
         <p>Hello Game Analytics</p>
+        <Header />
         {this.props.user && (
           <p>
-            {schoolId}, {schoolYear}, {this.props.user.schoolName}
+            {schoolYear}, {this.props.user.schoolName}
           </p>
         )}
       </div>
