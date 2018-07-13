@@ -32,10 +32,10 @@ class NewGame extends Component {
           user ? (
             <div>
               {this.renderRedirect()}
-              <p>New Session</p>
+              <p>New Game</p>
               <input
                 type="text"
-                placeholder="Session Name"
+                placeholder="Game Session Name"
                 name="sessionName"
                 value={sessionName}
                 onChange={this.handleChange}

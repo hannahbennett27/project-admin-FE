@@ -19,10 +19,10 @@ const userAcc = (
     <Header />
     <p>Account Page</p>
     <p>
-      Change password <Link to={"/changepassword"}>here</Link>
+      Change password <Link to={'/changepassword'}>here</Link>
     </p>
     <p>
-      View all game sessions <Link to={"/account/games"}>here</Link>
+      View all game sessions <Link to={'/account/games'}>here</Link>
     </p>
     <NewGame />
   </div>
@@ -31,7 +31,7 @@ const userAcc = (
 const nullUserAcc = (
   <div>
     <p>
-      Must be signed in to view page. <Link to={"/"}>Back</Link>
+      Must be signed in to view page. <Link to={'/'}>Back</Link>
     </p>
   </div>
 );
