@@ -72,21 +72,20 @@ class NewGame extends Component {
   };
 
   handleSubmit = id => {
-    console.log(id);
     const { schoolYear, sessionName } = this.state;
-    // dbgames
-    //   .createGameSession(id, schoolYear, sessionName)
-    //   .then(res => {
-    //     const gameId = res._key.path.segments[1];
-    //     this.setState({
-    //       schoolYear: '',
-    //       sessionName: '',
-    //       gameId
-    //     });
-    //   })
-    //   .catch(err => {
-    //     this.setState({ error: err });
-    //   });
+    dbgames
+      .createGameSession(id, schoolYear, sessionName)
+      .then(res => {
+        const gameId = res._key.path.segments[1];
+        this.setState({
+          schoolYear: "",
+          sessionName: "",
+          gameId
+        });
+      })
+      .catch(err => {
+        this.setState({ error: err });
+      });
   };
 }
 

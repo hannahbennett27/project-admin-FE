@@ -23,6 +23,20 @@ export const getAllGames = id => {
     });
 };
 
+export const getGamesByYear = year => {
+  return db
+    .collection("games")
+    .where("schoolYear", "==", year)
+    .get()
+    .then(function(querySnapshot) {
+      const gameArray = [];
+      querySnapshot.forEach(function(doc) {
+        gameArray.push({ ...doc.data(), schoolYear: doc.id });
+      });
+      return gameArray;
+    });
+};
+
 export const getSingleGame = gameId => {
   return db
     .collection("games")
