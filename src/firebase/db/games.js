@@ -1,13 +1,12 @@
 import { db } from '../firebase';
+import moment from 'moment';
 
 export const createGameSession = (id, schoolYear, sessionName) => {
-  // const timestamp = snapshot.get('created_at');
-  // const date = timestamp.toDate();
   return db.collection('games').add({
     schoolId: id,
+    sessionName,
     schoolYear,
-    sessionName
-    // created: /*Date.now()*/ date
+    created: moment().format()
   });
 };
 
@@ -48,13 +47,3 @@ export const getSingleGame = gameId => {
       return doc.data();
     });
 };
-
-// With this change, timestamps stored in Cloud Firestore will be read back as
-// Firebase Timestamp objects instead of as system Date objects. So you will also
-// need to update code expecting a Date to instead expect a Timestamp. For example:
-
-//   // Old:
-//   const date = snapshot.get('created_at');
-//   // New:
-//   const timestamp = snapshot.get('created_at');
-//   const date = timestamp.toDate();
