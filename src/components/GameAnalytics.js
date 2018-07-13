@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { dbgames } from "../firebase";
+import AuthUserContext from "./AuthUserContext";
 
 class GameAnalytics extends Component {
   state = {
@@ -18,12 +19,20 @@ class GameAnalytics extends Component {
     return (
       <div>
         <p>Hello Game Analytics</p>
-        <p>
-          {schoolId}, {schoolYear}
-        </p>
+        {this.props.user && (
+          <p>
+            {schoolId}, {schoolYear}, {this.props.user.schoolName}
+          </p>
+        )}
       </div>
     );
   }
 }
 
-export default GameAnalytics;
+export default props => {
+  return (
+    <AuthUserContext.Consumer>
+      {user => <GameAnalytics {...props} user={user} />}
+    </AuthUserContext.Consumer>
+  );
+};
