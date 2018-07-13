@@ -32,10 +32,10 @@ class NewGame extends Component {
           user ? (
             <div>
               {this.renderRedirect()}
-              <p>New Session</p>
+              <p>New Game</p>
               <input
                 type="text"
-                placeholder="Session Name"
+                placeholder="Game Session Name"
                 name="sessionName"
                 value={sessionName}
                 onChange={this.handleChange}
@@ -55,7 +55,7 @@ class NewGame extends Component {
                 type="submit"
                 value="Submit"
                 disabled={inputInvalid}
-                onClick={() => this.handleSubmit(user.uid)}
+                onClick={() => this.handleSubmit(user.id)}
               >
                 Start
               </button>
@@ -72,21 +72,20 @@ class NewGame extends Component {
   };
 
   handleSubmit = id => {
-    console.log(id);
     const { schoolYear, sessionName } = this.state;
-    // dbgames
-    //   .createGameSession(id, schoolYear, sessionName)
-    //   .then(res => {
-    //     const gameId = res._key.path.segments[1];
-    //     this.setState({
-    //       schoolYear: '',
-    //       sessionName: '',
-    //       gameId
-    //     });
-    //   })
-    //   .catch(err => {
-    //     this.setState({ error: err });
-    //   });
+    dbgames
+      .createGameSession(id, schoolYear, sessionName)
+      .then(res => {
+        const gameId = res._key.path.segments[1];
+        this.setState({
+          schoolYear: '',
+          sessionName: '',
+          gameId
+        });
+      })
+      .catch(err => {
+        this.setState({ error: err });
+      });
   };
 }
 
