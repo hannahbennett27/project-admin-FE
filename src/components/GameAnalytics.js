@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import { dbgames } from "../firebase";
-import AuthUserContext from "./AuthUserContext";
-import Header from "./Header";
+import React, { Component } from 'react';
+import { dbgames } from '../firebase';
+import AuthUserContext from './AuthUserContext';
+import Header from './Header';
 
 class GameAnalytics extends Component {
   state = {
@@ -17,13 +17,14 @@ class GameAnalytics extends Component {
 
   render() {
     const { schoolYear } = this.state.game;
+    const { gameId } = this.props.match.params;
     return (
       <div>
         <p>Hello Game Analytics</p>
         <Header />
         {this.props.user && (
           <p>
-            {schoolYear}, {this.props.user.schoolName}
+            School Year: {schoolYear}, Game: {gameId}
           </p>
         )}
       </div>
