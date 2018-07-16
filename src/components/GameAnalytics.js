@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { dbgames } from "../firebase";
 import AuthUserContext from "./AuthUserContext";
+import { Link } from "react-router-dom";
 import Header from "./Header";
 
 class GameAnalytics extends Component {
@@ -19,6 +20,7 @@ class GameAnalytics extends Component {
     const { schoolYear } = this.state.game;
     return (
       <div>
+        <Link to={"/account/games"}>Back</Link>
         <p>Hello Game Analytics</p>
         <Header />
         {this.props.user && (

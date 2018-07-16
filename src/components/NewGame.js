@@ -30,10 +30,12 @@ class NewGame extends Component {
       <AuthUserContext.Consumer>
         {user =>
           user ? (
-            <div>
+            <div className="container">
               {this.renderRedirect()}
-              <p>New Game</p>
+              <h3 className="text-center">New Game Session</h3>
+
               <input
+                className="form-control"
                 type="text"
                 placeholder="Game Session Name"
                 name="sessionName"
@@ -42,6 +44,7 @@ class NewGame extends Component {
               />
               <br />
               <input
+                className="form-control"
                 type="number"
                 min={minYear}
                 max={maxYear}
@@ -52,6 +55,7 @@ class NewGame extends Component {
               />
               <br />
               <button
+                className="btn btn-outline-primary"
                 type="submit"
                 value="Submit"
                 disabled={inputInvalid}

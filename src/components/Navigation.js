@@ -12,27 +12,31 @@ const Navigation = () => {
 };
 
 const userNav = (
-  <div>
-    <Link to={"/"}>
-      <button>Home</button>
-    </Link>
-    <Link to={"/account"}>
-      <button>Account</button>
-    </Link>
-    <SignOut />
-  </div>
-);
-
-const nullUserNav = (
-  <nav className="navbar navbar-expand-lg navbar-light bg-light">
+  <nav className="navbar navbar-expand-lg navbar-light bg-light border-bottom">
     <Link to={"/"}>
       <h1 className="navbar-brand">Home </h1>
     </Link>
-    <div />
+    <div className="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul className="navbar-nav mr-auto">
+        <li className="nav-item">
+          <Link to={"/account"}>
+            <button className="btn btn-outline-dark">Account</button>
+          </Link>
+        </li>
+        <SignOut />
+      </ul>
+    </div>
+  </nav>
+);
+
+const nullUserNav = (
+  <nav className="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+    <Link to={"/"}>
+      <h1 className="navbar-brand">Home </h1>
+    </Link>
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
       {" "}
       <ul className="navbar-nav mr-auto">
-        <li className="nav-item active" />
         <li className="nav-item">
           <Link to={"/signup"}>
             <button className="btn btn-outline-dark">
