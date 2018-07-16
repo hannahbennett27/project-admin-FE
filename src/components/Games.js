@@ -22,6 +22,7 @@ class Games extends Component {
     const gameArray = !this.state.filteredGames.length
       ? this.state.games
       : this.state.filteredGames;
+
     return this.state.games ? (
       <div>
         <Header />
@@ -44,14 +45,14 @@ class Games extends Component {
                 6
               </option>
             </select>
-            {typeof gameArray[0] === "string" ? (
+            {typeof gameArray[0] === 'string' ? (
               <h1>{gameArray[0]}</h1>
             ) : (
               gameArray.map(game => {
                 return (
                   <p>
                     <Link to={`/account/games/${game.gameId}`}>
-                      School Year:{game.schoolYear}, Game:{game.gameId}
+                      School Year: {game.schoolYear}, Game: {game.gameId}
                     </Link>
                   </p>
                 );
