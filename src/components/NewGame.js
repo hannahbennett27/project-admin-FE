@@ -1,13 +1,13 @@
-import React, { Component } from "react";
-import { Redirect } from "react-router-dom";
-import { dbgames } from "../firebase";
-import AuthUserContext from "./AuthUserContext";
+import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
+import { dbgames } from '../firebase';
+import AuthUserContext from './AuthUserContext';
 
 class NewGame extends Component {
   state = {
-    schoolYear: "",
-    sessionName: "",
-    gameId: "",
+    schoolYear: '',
+    sessionName: '',
+    gameId: '',
     error: null
   };
 
@@ -21,10 +21,13 @@ class NewGame extends Component {
     const { schoolYear, sessionName, error } = this.state;
 
     const minYear = 3;
-    const maxYear = 9;
+    const maxYear = 6;
 
     const inputInvalid =
-      !schoolYear || schoolYear < minYear || schoolYear > maxYear;
+      schoolYear === '' ||
+      schoolYear < minYear ||
+      schoolYear > maxYear ||
+      sessionName === '';
 
     return (
       <AuthUserContext.Consumer>
@@ -82,8 +85,8 @@ class NewGame extends Component {
       .then(res => {
         const gameId = res._key.path.segments[1];
         this.setState({
-          schoolYear: "",
-          sessionName: "",
+          schoolYear: '',
+          sessionName: '',
           gameId
         });
       })

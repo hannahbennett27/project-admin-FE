@@ -1,18 +1,22 @@
-import React, { Component } from "react";
-import { dbgames } from "../firebase";
-import { Link } from "react-router-dom";
-import AuthUserContext from "./AuthUserContext";
-import Header from "./Header";
+import React, { Component } from 'react';
+import { dbgames } from '../firebase';
+import { Link } from 'react-router-dom';
+import AuthUserContext from './AuthUserContext';
+import Header from './Header';
+
+//TODO: change the map function in render to a reduce. Use filterTerm in state to render the datea conditionally and then use componentDidUpdate()
 
 class Games extends Component {
   state = { games: [], filteredGames: [], filterTerm: null };
 
   componentDidMount() {
-    const id = this.props.user.id;
+    const { id } = this.props.user;
     dbgames.getAllGames(id).then(games => {
       this.setState({ games });
     });
   }
+
+  //TODO: Maybe try componentDidUpdate here - /account/games not working on refresh
 
   render() {
     const gameArray = !this.state.filteredGames.length
@@ -39,15 +43,6 @@ class Games extends Component {
               <option value="6" onClick={this.handleClick}>
                 6
               </option>
-              <option value="7" onClick={this.handleClick}>
-                7
-              </option>
-              <option value="1" onClick={this.handleClick}>
-                8
-              </option>
-              <option value="2" onClick={this.handleClick}>
-                9
-              </option>
             </select>
             {typeof gameArray[0] === "string" ? (
               <h1>{gameArray[0]}</h1>
@@ -72,7 +67,7 @@ class Games extends Component {
   }
 
   handleClick = e => {
-    e.target.innerText === "All Game Data"
+    e.target.innerText === 'All Game Data'
       ? this.showAllGameData(e)
       : this.filterGameSessions(e);
   };
@@ -87,7 +82,7 @@ class Games extends Component {
       return game.schoolYear === schoolYear;
     });
     if (updatedGames.length === 0)
-      updatedGames = ["Whoops, no game data for this year"];
+      updatedGames = ['Whoops, no game data for this year'];
     this.setState({ filteredGames: updatedGames });
   };
 }

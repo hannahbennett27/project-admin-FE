@@ -24,20 +24,26 @@ export const getAllGames = id => {
     });
 };
 
+//TODO: Limit search to school's games only
+//TODO: Change search to 'by student name'
 export const getGamesByYear = year => {
-  return db
-    .collection("games")
-    .where("schoolYear", "==", year)
-    .get()
-    .then(function(querySnapshot) {
-      const gameArray = [];
-      querySnapshot.forEach(function(doc) {
-        gameArray.push({ ...doc.data(), schoolYear: doc.id });
-      });
-      return gameArray;
-    });
+  return (
+    db
+      .collection('games')
+      // .where('schoolId', '==', id)
+      .where('schoolYear', '==', year)
+      .get()
+      .then(function(querySnapshot) {
+        const gameArray = [];
+        querySnapshot.forEach(function(doc) {
+          gameArray.push({ ...doc.data(), schoolYear: doc.id });
+        });
+        return gameArray;
+      })
+  );
 };
 
+//TODO: Limit search to school's games only - error handling
 export const getSingleGame = gameId => {
   return db
     .collection('games')
