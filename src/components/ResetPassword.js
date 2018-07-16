@@ -23,6 +23,7 @@ class ResetPassword extends Component {
     const resetPasswordForm = (
       <div>
         <input
+          className="form-control"
           type="text"
           placeholder="Email"
           name="email"
@@ -31,6 +32,7 @@ class ResetPassword extends Component {
         />
         <br />
         <button
+          className="btn btn-outline-primary btn-sm"
           type="submit"
           value="Submit"
           disabled={inputInvalid}
@@ -42,14 +44,22 @@ class ResetPassword extends Component {
     );
 
     return (
-      <div>
-        {this.renderRedirect()}
-        <p>Reset Password</p>
-        {resetPasswordForm}
-        {error && <p>{error.message}</p>}
-        <p>
-          <Link to={"/"}>Back</Link>
-        </p>
+      <div className="container mt-5 ">
+        <div>
+          <div className="row justify-content-md-center">
+            <div className="col col-lg-2" />
+            <div className="col-md-auto text-center">
+              {this.renderRedirect()}
+              <p>Reset Password</p>
+              {resetPasswordForm}
+              {error && <p>{error.message}</p>}
+              <p>
+                <Link to={"/"}>Back</Link>
+              </p>
+            </div>
+            <div className="col col-lg-2" />
+          </div>
+        </div>
       </div>
     );
   }
