@@ -49,13 +49,14 @@ const userAcc = (
         </div>
       </div>
     </div>
+
   </div>
 );
 
 const nullUserAcc = (
   <div>
     <p>
-      Must be signed in to view page. <Link to={"/"}>Back</Link>
+      Must be signed in to view page. <Link to={'/'}>Back</Link>
     </p>
   </div>
 );

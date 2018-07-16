@@ -33,10 +33,11 @@ class NewGame extends Component {
             <div className="container">
               {this.renderRedirect()}
               <h3 className="text-center">New Game Session</h3>
+
               <input
                 className="form-control"
                 type="text"
-                placeholder="Session Name"
+                placeholder="Game Session Name"
                 name="sessionName"
                 value={sessionName}
                 onChange={this.handleChange}

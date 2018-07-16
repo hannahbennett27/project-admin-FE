@@ -1,10 +1,8 @@
-import { db } from "../firebase";
-
-// User API
+import { db } from '../firebase';
 
 export const createUser = (id, schoolName, email) => {
   return db
-    .collection("users")
+    .collection('users')
     .doc(id)
     .set({
       schoolName,
@@ -15,7 +13,7 @@ export const createUser = (id, schoolName, email) => {
 
 export const getUserById = id => {
   return db
-    .collection("users")
+    .collection('users')
     .doc(id)
     .get()
     .then(function(doc) {
