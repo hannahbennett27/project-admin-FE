@@ -5,7 +5,7 @@ import AuthUserContext from "./AuthUserContext";
 import Header from "./Header";
 
 class Games extends Component {
-  state = { games: [], filteredGames: [] };
+  state = { games: [], filteredGames: [], filterTerm: null };
 
   componentDidMount() {
     const id = this.props.user.id;
@@ -21,44 +21,50 @@ class Games extends Component {
     return this.state.games ? (
       <div>
         <Header />
-        <button onClick={this.handleClick}>All Game Data</button>
-        <select>
-          <option value="0">Select year:</option>
-          <option value="3" onClick={this.handleClick}>
-            3
-          </option>
-          <option value="4" onClick={this.handleClick}>
-            4
-          </option>
-          <option value="5" onClick={this.handleClick}>
-            5
-          </option>
-          <option value="6" onClick={this.handleClick}>
-            6
-          </option>
-          <option value="7" onClick={this.handleClick}>
-            7
-          </option>
-          <option value="1" onClick={this.handleClick}>
-            8
-          </option>
-          <option value="2" onClick={this.handleClick}>
-            9
-          </option>
-        </select>
-        {typeof gameArray[0] === "string" ? (
-          <h1>{gameArray[0]}</h1>
-        ) : (
-          gameArray.map(game => {
-            return (
-              <p>
-                <Link to={`/account/games/${game.gameId}`}>
-                  School Year:{game.schoolYear}, Game:{game.gameId}
-                </Link>
-              </p>
-            );
-          })
-        )}
+        <div className="row">
+          <div className="col-4" />
+          <div className="col-4">
+            <button onClick={this.handleClick}>All Game Data</button>
+            <select>
+              <option value="0">Select year:</option>
+              <option value="3" onClick={this.handleClick}>
+                3
+              </option>
+              <option value="4" onClick={this.handleClick}>
+                4
+              </option>
+              <option value="5" onClick={this.handleClick}>
+                5
+              </option>
+              <option value="6" onClick={this.handleClick}>
+                6
+              </option>
+              <option value="7" onClick={this.handleClick}>
+                7
+              </option>
+              <option value="1" onClick={this.handleClick}>
+                8
+              </option>
+              <option value="2" onClick={this.handleClick}>
+                9
+              </option>
+            </select>
+            {typeof gameArray[0] === "string" ? (
+              <h1>{gameArray[0]}</h1>
+            ) : (
+              gameArray.map(game => {
+                return (
+                  <p>
+                    <Link to={`/account/games/${game.gameId}`}>
+                      School Year:{game.schoolYear}, Game:{game.gameId}
+                    </Link>
+                  </p>
+                );
+              })
+            )}
+          </div>
+        </div>
+        <div className="col-4" />
       </div>
     ) : (
       <p>loading...</p>
