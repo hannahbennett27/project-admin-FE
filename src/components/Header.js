@@ -5,7 +5,9 @@ class Header extends Component {
   render() {
     return this.props.user ? (
       <div>
-        <h1 className="display-1 text-center">{this.props.user.schoolName}</h1>
+        <h1 className="display-1 text-center mt-4">
+          {this.props.user.schoolName}
+        </h1>
       </div>
     ) : null;
   }

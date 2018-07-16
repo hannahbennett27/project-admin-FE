@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import AuthUserContext from "./AuthUserContext";
 import NewGame from "./NewGame";
 import Header from "./Header";
+import Games from "./Games";
 
 const Account = () => {
   return (
@@ -19,33 +20,43 @@ const userAcc = (
     <div className="row">
       <div className="col-2 border-right bg-light">
         <ul className="list-unstyled">
-          <li>
+          <li className="mb-4 mt-2">
             <h2>Account Page</h2>
           </li>
-          <li>
+          <li className="mb-2">
             <Link to={"/changepassword"}>
-              <i class="fas fa-user-circle" /> Update Account
+              <span className="text-secondary">
+                {" "}
+                <i class="fas fa-user-circle" /> Update Account
+              </span>
             </Link>
           </li>
-          <li>
+          <li className="mb-2">
             <Link to={"/account/games"}>
-              <i class="fas fa-gamepad" /> Saved games
+              <span className="text-secondary">
+                {" "}
+                <i class="fas fa-gamepad" /> Saved games
+              </span>
             </Link>
           </li>
         </ul>
       </div>
       <div className="col-10">
         <Header />
-        <div className="row mt-5">
-          <div className="col-6">
-            <NewGame />
-          </div>
-          <div className="col-6">
-            <img src="https://i2.wp.com/reactscript.com/wp-content/uploads/2017/01/React-wrapper-for-Chart.js-2.png" />
+        <div className="container">
+          <div className="row mt-5">
+            <div className="col-6">
+              <NewGame />
+            </div>
+            <div className="col-6">
+              <img src="https://i2.wp.com/reactscript.com/wp-content/uploads/2017/01/React-wrapper-for-Chart.js-2.png" />
+            </div>
           </div>
         </div>
-        <div>
-          <img src="https://i.stack.imgur.com/hRo91.png" />
+        <div className="container mt-5">
+          <div>
+            <Games />
+          </div>
         </div>
       </div>
     </div>
