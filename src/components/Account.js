@@ -15,16 +15,41 @@ const Account = () => {
 };
 
 const userAcc = (
-  <div>
-    <Header />
-    <p>Account Page</p>
-    <p>
-      Change password <Link to={'/changepassword'}>here</Link>
-    </p>
-    <p>
-      View all game sessions <Link to={'/account/games'}>here</Link>
-    </p>
-    <NewGame />
+  <div className="container-fluid bg-white">
+    <div className="row">
+      <div className="col-2 border-right bg-light">
+        <ul className="list-unstyled">
+          <li>
+            <h2>Account Page</h2>
+          </li>
+          <li>
+            <Link to={"/changepassword"}>
+              <i class="fas fa-user-circle" /> Update Account
+            </Link>
+          </li>
+          <li>
+            <Link to={"/account/games"}>
+              <i class="fas fa-gamepad" /> Saved games
+            </Link>
+          </li>
+        </ul>
+      </div>
+      <div className="col-10">
+        <Header />
+        <div className="row mt-5">
+          <div className="col-6">
+            <NewGame />
+          </div>
+          <div className="col-6">
+            <img src="https://i2.wp.com/reactscript.com/wp-content/uploads/2017/01/React-wrapper-for-Chart.js-2.png" />
+          </div>
+        </div>
+        <div>
+          <img src="https://i.stack.imgur.com/hRo91.png" />
+        </div>
+      </div>
+    </div>
+
   </div>
 );
 

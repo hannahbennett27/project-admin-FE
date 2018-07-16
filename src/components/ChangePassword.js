@@ -24,6 +24,7 @@ class ChangePassword extends Component {
     const changePasswordForm = (
       <div>
         <input
+          className="form-control"
           type="password"
           placeholder="New Password"
           name="passwordOne"
@@ -32,6 +33,7 @@ class ChangePassword extends Component {
         />
         <br />
         <input
+          className="form-control"
           type="password"
           placeholder="Confirm New Password"
           name="passwordTwo"
@@ -40,6 +42,7 @@ class ChangePassword extends Component {
         />
         <br />
         <button
+          className="btn btn-outline-primary btn-sm"
           type="submit"
           value="Submit"
           disabled={inputInvalid}
@@ -51,14 +54,24 @@ class ChangePassword extends Component {
     );
 
     return (
-      <div>
-        {this.renderRedirect()}
-        <p>Change Password</p>
-        {changePasswordForm}
-        {error && <p>{error.message}</p>}
-        <p>
-          <Link to={"/"}>Back</Link>
-        </p>
+      <div className="container mt-5 ">
+        <div>
+          <div className="row justify-content-md-center">
+            <div className="col col-lg-2" />
+            <div className="col-md-auto text-center">
+              {this.renderRedirect()}
+              <i class="fas fa-unlock" />
+              <br />
+              <h5>Change Password</h5>
+              {changePasswordForm}
+              {error && <p>{error.message}</p>}
+              <p>
+                <Link to={"/"}>Back</Link>
+              </p>
+            </div>
+            <div className="col col-lg-2" />
+          </div>
+        </div>
       </div>
     );
   }

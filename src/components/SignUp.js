@@ -30,6 +30,7 @@ class SignUp extends Component {
     const signUpForm = (
       <div>
         <input
+          className="form-control"
           type="text"
           placeholder="Email"
           name="email"
@@ -38,6 +39,7 @@ class SignUp extends Component {
         />
         <br />
         <input
+          className="form-control"
           type="text"
           placeholder="School Name"
           name="schoolName"
@@ -46,6 +48,7 @@ class SignUp extends Component {
         />
         <br />
         <input
+          className="form-control"
           type="password"
           placeholder="Password"
           name="passwordOne"
@@ -54,6 +57,7 @@ class SignUp extends Component {
         />
         <br />
         <input
+          className="form-control"
           type="password"
           placeholder="Confirm Password"
           name="passwordTwo"
@@ -62,6 +66,7 @@ class SignUp extends Component {
         />
         <br />
         <button
+          className="btn btn-outline-primary btn-sm"
           type="submit"
           value="Submit"
           disabled={inputInvalid}
@@ -73,14 +78,24 @@ class SignUp extends Component {
     );
 
     return (
-      <div>
-        {this.renderRedirect()}
-        <p>Sign Up</p>
-        {signUpForm}
-        {error && <p>{error.message}</p>}
-        <p>
-          Already have an account? <Link to={"/signin"}>Sign In</Link>
-        </p>
+      <div className="container mt-5 ">
+        <div>
+          <div className="row justify-content-md-center">
+            <div className="col col-lg-2" />
+            <div className="col-md-auto text-center">
+              {this.renderRedirect()}
+              <i class="fas fa-user" />
+              <br />
+              <h5>Sign Up</h5>
+              {signUpForm}
+              {error && <p>{error.message}</p>}
+              <p>
+                Already have an account? <Link to={"/signin"}>Sign In</Link>
+              </p>
+            </div>
+            <div className="col col-lg-2" />
+          </div>
+        </div>
       </div>
     );
   }

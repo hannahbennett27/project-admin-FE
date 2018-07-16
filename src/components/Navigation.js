@@ -12,29 +12,50 @@ const Navigation = () => {
 };
 
 const userNav = (
-  <div>
+  <nav className="navbar navbar-expand-lg navbar-light bg-light border-bottom">
     <Link to={"/"}>
-      <button>Home</button>
+      <h1 className="navbar-brand">Home </h1>
     </Link>
-    <Link to={"/account"}>
-      <button>Account</button>
-    </Link>
-    <SignOut />
-  </div>
+    <div className="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul className="navbar-nav mr-auto">
+        <li className="nav-item">
+          <Link to={"/account"}>
+            <button className="btn btn-outline-dark">Account</button>
+          </Link>
+        </li>
+        <SignOut />
+      </ul>
+    </div>
+  </nav>
 );
 
 const nullUserNav = (
-  <div>
+  <nav className="navbar navbar-expand-lg navbar-light bg-light border-bottom">
     <Link to={"/"}>
-      <button>Home</button>
+      <h1 className="navbar-brand">Home </h1>
     </Link>
-    <Link to={"/signup"}>
-      <button>Sign Up</button>
-    </Link>
-    <Link to={"/signin"}>
-      <button>Sign In</button>
-    </Link>
-  </div>
+    <div className="collapse navbar-collapse" id="navbarSupportedContent">
+      {" "}
+      <ul className="navbar-nav mr-auto">
+        <li className="nav-item">
+          <Link to={"/signup"}>
+            <button className="btn btn-outline-dark">
+              {" "}
+              Register <i className="fas fa-user-plus" />{" "}
+            </button>
+          </Link>
+        </li>
+        <li className="nav-item dropdown">
+          <Link to={"/signin"}>
+            <button className="btn btn-outline-dark">
+              {" "}
+              Sign In <i className="fas fa-sign-in-alt" />
+            </button>
+          </Link>
+        </li>
+      </ul>
+    </div>
+  </nav>
 );
 
 export default Navigation;

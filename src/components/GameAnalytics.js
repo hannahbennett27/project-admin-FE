@@ -1,7 +1,9 @@
-import React, { Component } from 'react';
-import { dbgames } from '../firebase';
-import AuthUserContext from './AuthUserContext';
-import Header from './Header';
+
+import React, { Component } from "react";
+import { dbgames } from "../firebase";
+import AuthUserContext from "./AuthUserContext";
+import { Link } from "react-router-dom";
+import Header from "./Header";
 
 class GameAnalytics extends Component {
   state = {
@@ -20,12 +22,15 @@ class GameAnalytics extends Component {
     const { gameId } = this.props.match.params;
     return (
       <div>
+        <Link to={"/account/games"}>Back</Link>
         <p>Hello Game Analytics</p>
         <Header />
         {this.props.user && (
-          <p>
-            School Year: {schoolYear}, Game: {gameId}
-          </p>
+          <div>
+            <p>Game id: {gameId}</p>
+            <p>School: {this.props.user.schoolName}</p>
+            <p>Year: {schoolYear}</p>
+          </div>
         )}
       </div>
     );

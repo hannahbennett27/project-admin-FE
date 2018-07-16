@@ -7,7 +7,7 @@ import Header from './Header';
 //TODO: change the map function in render to a reduce. Use filterTerm in state to render the datea conditionally and then use componentDidUpdate()
 
 class Games extends Component {
-  state = { games: [], filteredGames: [] };
+  state = { games: [], filteredGames: [], filterTerm: null };
 
   componentDidMount() {
     const { id } = this.props.user;
@@ -25,36 +25,41 @@ class Games extends Component {
     return this.state.games ? (
       <div>
         <Header />
-        <button onClick={this.handleClick}>All Game Data</button>
-        <select>
-          <option value="0">Select Year:</option>
-          <option value="3" onClick={this.handleClick}>
-            3
-          </option>
-          <option value="4" onClick={this.handleClick}>
-            4
-          </option>
-          <option value="5" onClick={this.handleClick}>
-            5
-          </option>
-          <option value="6" onClick={this.handleClick}>
-            6
-          </option>
-        </select>
-        {typeof gameArray[0] === 'string' ? (
-          <h1>{gameArray[0]}</h1>
-        ) : (
-          gameArray.map(game => {
-            return (
-              <p key={game.gameId}>
-                Game:
-                <Link to={`/account/games/${game.gameId}`}> {game.gameId}</Link>
-                <br />
-                School Year: {game.schoolYear}
-              </p>
-            );
-          })
-        )}
+        <div className="row">
+          <div className="col-4" />
+          <div className="col-4">
+            <button onClick={this.handleClick}>All Game Data</button>
+            <select>
+              <option value="0">Select year:</option>
+              <option value="3" onClick={this.handleClick}>
+                3
+              </option>
+              <option value="4" onClick={this.handleClick}>
+                4
+              </option>
+              <option value="5" onClick={this.handleClick}>
+                5
+              </option>
+              <option value="6" onClick={this.handleClick}>
+                6
+              </option>
+            </select>
+            {typeof gameArray[0] === "string" ? (
+              <h1>{gameArray[0]}</h1>
+            ) : (
+              gameArray.map(game => {
+                return (
+                  <p>
+                    <Link to={`/account/games/${game.gameId}`}>
+                      School Year:{game.schoolYear}, Game:{game.gameId}
+                    </Link>
+                  </p>
+                );
+              })
+            )}
+          </div>
+        </div>
+        <div className="col-4" />
       </div>
     ) : (
       <p>loading...</p>
