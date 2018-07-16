@@ -24,6 +24,7 @@ class SignIn extends Component {
     const signInForm = (
       <div>
         <input
+          className="form-control"
           type="text"
           placeholder="Email"
           name="email"
@@ -32,6 +33,7 @@ class SignIn extends Component {
         />
         <br />
         <input
+          className="form-control"
           type="password"
           placeholder="Password"
           name="password"
@@ -42,6 +44,7 @@ class SignIn extends Component {
           Forgotten your password? <Link to={"/resetpassword"}>Reset</Link>
         </p>
         <button
+          className="btn btn-outline-primary btn-sm"
           type="submit"
           value="Submit"
           disabled={inputInvalid}
@@ -53,14 +56,24 @@ class SignIn extends Component {
     );
 
     return (
-      <div>
-        {this.renderRedirect()}
-        <p>Sign In</p>
-        {signInForm}
-        {error && <p>{error.message}</p>}
-        <p>
-          Don't have an account? <Link to={"/signup"}>Sign Up</Link>
-        </p>
+      <div className="container mt-5">
+        <div>
+          <div className="row justify-content-md-center">
+            <div className="col col-lg-2" />
+            <div className="col-md-auto text-center">
+              {this.renderRedirect()}
+              <i class="fas fa-user" />
+              <br />
+              <p>Sign In</p>
+              {signInForm}
+              {error && <p>{error.message}</p>}
+              <p>
+                Don't have an account? <Link to={"/signup"}>Sign Up</Link>
+              </p>
+            </div>
+            <div className="col col-lg-2" />
+          </div>
+        </div>
       </div>
     );
   }
