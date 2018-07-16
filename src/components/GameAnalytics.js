@@ -18,15 +18,18 @@ class GameAnalytics extends Component {
 
   render() {
     const { schoolYear } = this.state.game;
+    const { gameId } = this.props.match.params;
     return (
       <div>
         <Link to={"/account/games"}>Back</Link>
         <p>Hello Game Analytics</p>
         <Header />
         {this.props.user && (
-          <p>
-            {schoolYear}, {this.props.user.schoolName}
-          </p>
+          <div>
+            <p>Game id: {gameId}</p>
+            <p>School: {this.props.user.schoolName}</p>
+            <p>Year: {schoolYear}</p>
+          </div>
         )}
       </div>
     );
