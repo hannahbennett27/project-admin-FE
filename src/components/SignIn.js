@@ -56,7 +56,7 @@ class SignIn extends Component {
     );
 
     return (
-      <div className="container mt-5">
+      <div className="container mt-5 ">
         <div>
           <div className="row justify-content-md-center">
             <div className="col col-lg-2" />
@@ -64,7 +64,7 @@ class SignIn extends Component {
               {this.renderRedirect()}
               <i class="fas fa-user" />
               <br />
-              <p>Sign In</p>
+              <h5>Sign In</h5>
               {signInForm}
               {error && <p>{error.message}</p>}
               <p>
