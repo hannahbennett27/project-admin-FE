@@ -18,6 +18,7 @@ class Games extends Component {
   //TODO: Maybe try componentDidUpdate here - /account/games not working on refresh
 
   render() {
+
     return this.state.games ? (
       <div>
         <h3 className="text-center">Previous Game Sessions</h3>
@@ -39,6 +40,7 @@ class Games extends Component {
                   <td>
                     <Link to={`/account/games/${game.gameId}`}>
                       {game.gameId}
+
                     </Link>
                   </td>
                   <td>01/12/18</td>

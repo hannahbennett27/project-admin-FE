@@ -1,9 +1,9 @@
-
-import React, { Component } from "react";
-import { dbgames } from "../firebase";
-import AuthUserContext from "./AuthUserContext";
-import { Link } from "react-router-dom";
-import Header from "./Header";
+import React, { Component } from 'react';
+import { dbgames } from '../firebase';
+import AuthUserContext from './AuthUserContext';
+import { Link } from 'react-router-dom';
+import Header from './Header';
+import GameAnalyticsCharts from './GameAnalyticsCharts';
 
 class GameAnalytics extends Component {
   state = {
@@ -18,6 +18,7 @@ class GameAnalytics extends Component {
   }
 
   render() {
+
     const { schoolYear } = this.state.game;
 
     return this.state.game.schoolYear ? (
