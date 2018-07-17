@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import { dbgames } from "../firebase";
-import { Link } from "react-router-dom";
-import AuthUserContext from "./AuthUserContext";
+import React, { Component } from 'react';
+import { dbgames } from '../firebase';
+import { Link } from 'react-router-dom';
+import AuthUserContext from './AuthUserContext';
 
 class Games extends Component {
   state = { games: [] };
@@ -32,7 +32,7 @@ class Games extends Component {
           <tbody>
             {this.state.games.map((game, index) => {
               return (
-                <tr>
+                <tr key={game.gameId}>
                   <td>{index + 1}</td>
                   <td>{game.sessionName}</td>
                   <td>{game.schoolYear} </td>

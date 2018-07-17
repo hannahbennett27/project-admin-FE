@@ -1,19 +1,20 @@
-import { db } from "../firebase";
-import moment from "moment";
+import { db } from '../firebase';
+import moment from 'moment';
 
 export const createGameSession = (id, schoolYear, sessionName) => {
-  return db.collection("games").add({
+  return db.collection('games').add({
     schoolId: id,
     sessionName,
     schoolYear,
-    created: moment().format("MMMM Do YYYY, h:mm:ss a")
+    created: moment().format('MMMM Do YYYY, h:mm:ss a'),
+    players: {}
   });
 };
 
 export const getAllGames = id => {
   return db
-    .collection("games")
-    .where("schoolId", "==", id)
+    .collection('games')
+    .where('schoolId', '==', id)
     .get()
     .then(function(querySnapshot) {
       const gameArray = [];
@@ -29,9 +30,9 @@ export const getAllGames = id => {
 export const getGamesByYear = year => {
   return (
     db
-      .collection("games")
+      .collection('games')
       // .where('schoolId', '==', id)
-      .where("schoolYear", "==", year)
+      .where('schoolYear', '==', year)
       .get()
       .then(function(querySnapshot) {
         const gameArray = [];
@@ -46,7 +47,7 @@ export const getGamesByYear = year => {
 //TODO: Limit search to school's games only - error handling
 export const getSingleGame = gameId => {
   return db
-    .collection("games")
+    .collection('games')
     .doc(gameId)
     .get()
     .then(function(doc) {

@@ -1,8 +1,8 @@
-import React, { Component } from "react";
-import { dbgames } from "../firebase";
-import AuthUserContext from "./AuthUserContext";
-import { Link } from "react-router-dom";
-import GameAnalyticsCharts from "./GameAnalyticsCharts";
+import React, { Component } from 'react';
+import { dbgames } from '../firebase';
+import AuthUserContext from './AuthUserContext';
+import { Link } from 'react-router-dom';
+import GameAnalyticsCharts from './GameAnalyticsCharts';
 
 class GameAnalytics extends Component {
   state = {
@@ -26,23 +26,23 @@ class GameAnalytics extends Component {
             <ul className="list-unstyled">
               <li className="mb-2 mt-2">{this.props.user.schoolName} </li>
               <li className="mb-2 text-secondary">
-                <Link to={"/account"}>
+                <Link to={'/account'}>
                   <span className="text-secondary">Account Summary</span>
                 </Link>
               </li>
               <li className="mb-2 ">
-                <Link to={"/changepassword"}>
+                <Link to={'/changepassword'}>
                   <span className="text-secondary">
-                    {" "}
-                    <i class="fas fa-user-circle" /> Update Account
+                    {' '}
+                    <i className="fas fa-user-circle" /> Update Account
                   </span>
                 </Link>
               </li>
               <li className="mb-2 text-secondary">
-                <Link to={"/account/games"}>
+                <Link to={'/account/games'}>
                   <span className="text-secondary">
-                    {" "}
-                    <i class="fas fa-gamepad" /> Saved games
+                    {' '}
+                    <i className="fas fa-gamepad" /> Saved games
                   </span>
                 </Link>
               </li>
@@ -60,10 +60,16 @@ class GameAnalytics extends Component {
                 <div className="container">
                   <div className="row">
                     <div className="col-6">
-                      <img src="https://i2.wp.com/reactscript.com/wp-content/uploads/2017/01/React-wrapper-for-Chart.js-2.png" />
+                      <img
+                        src="https://i2.wp.com/reactscript.com/wp-content/uploads/2017/01/React-wrapper-for-Chart.js-2.png"
+                        alt="chart-placeholder"
+                      />
                     </div>
                     <div className="col-6">
-                      <img src="https://i2.wp.com/reactscript.com/wp-content/uploads/2017/01/React-wrapper-for-Chart.js-2.png" />
+                      <img
+                        src="https://i2.wp.com/reactscript.com/wp-content/uploads/2017/01/React-wrapper-for-Chart.js-2.png"
+                        alt="chart-placeholder"
+                      />
                     </div>
                   </div>
                 </div>

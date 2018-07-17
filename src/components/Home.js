@@ -34,7 +34,7 @@ const Home = () => {
             <p>Real life in-game decisions</p>
           </div>
           <div className="col-4 text-center">
-            <i class="fas fa-plus display-3" />
+            <i className="fas fa-plus display-3" />
             <h2 className="mt-2">Modern</h2>
             <p>
               Being a progressive web app, the game game be played by children
