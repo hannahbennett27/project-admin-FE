@@ -45,18 +45,21 @@ const generateRatingsLine = playersData => {
       {
         label: 'Credit Rating - Class Average',
         borderColor: 'red',
+        backgroundColor: 'white',
         lineTension: 0,
         data: aveRating
       },
       {
         label: 'Credit Available - Class Average',
         borderColor: 'blue',
+        backgroundColor: 'white',
         lineTension: 0,
         data: aveCreditAvail
       },
       {
         label: 'Cash Available - Class Average',
         borderColor: 'purple',
+        backgroundColor: 'white',
         lineTension: 0,
         data: aveCashAvail
       }
