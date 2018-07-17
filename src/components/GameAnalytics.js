@@ -1,3 +1,4 @@
+
 import React, { Component } from "react";
 import { dbgames } from "../firebase";
 import AuthUserContext from "./AuthUserContext";
@@ -18,6 +19,7 @@ class GameAnalytics extends Component {
 
   render() {
     const { schoolYear } = this.state.game;
+
     return this.state.game.schoolYear ? (
       <div className="container-fluid bg-white">
         <div className="row">

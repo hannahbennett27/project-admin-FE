@@ -1,17 +1,21 @@
+
 import React, { Component } from "react";
 import { dbgames } from "../firebase";
 import { Link } from "react-router-dom";
 import AuthUserContext from "./AuthUserContext";
 
+
 class Games extends Component {
   state = { games: [] };
 
   componentDidMount() {
-    const id = this.props.user.id;
+    const { id } = this.props.user;
     dbgames.getAllGames(id).then(games => {
       this.setState({ games });
     });
   }
+
+  //TODO: Maybe try componentDidUpdate here - /account/games not working on refresh
 
   render() {
     return this.state.games ? (
@@ -48,6 +52,7 @@ class Games extends Component {
       <div id="loader" />
     );
   }
+
 }
 
 export default props => {

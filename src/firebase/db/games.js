@@ -1,18 +1,19 @@
-import { db } from "../firebase";
+import { db } from '../firebase';
+import moment from 'moment';
 
 export const createGameSession = (id, schoolYear, sessionName) => {
-  return db.collection("games").add({
+  return db.collection('games').add({
     schoolId: id,
-    schoolYear,
     sessionName,
-    date: Date.now()
+    schoolYear,
+    created: moment().format()
   });
 };
 
 export const getAllGames = id => {
   return db
-    .collection("games")
-    .where("schoolId", "==", id)
+    .collection('games')
+    .where('schoolId', '==', id)
     .get()
     .then(function(querySnapshot) {
       const gameArray = [];
@@ -23,23 +24,29 @@ export const getAllGames = id => {
     });
 };
 
+//TODO: Limit search to school's games only
+//TODO: Change search to 'by student name'
 export const getGamesByYear = year => {
-  return db
-    .collection("games")
-    .where("schoolYear", "==", year)
-    .get()
-    .then(function(querySnapshot) {
-      const gameArray = [];
-      querySnapshot.forEach(function(doc) {
-        gameArray.push({ ...doc.data(), schoolYear: doc.id });
-      });
-      return gameArray;
-    });
+  return (
+    db
+      .collection('games')
+      // .where('schoolId', '==', id)
+      .where('schoolYear', '==', year)
+      .get()
+      .then(function(querySnapshot) {
+        const gameArray = [];
+        querySnapshot.forEach(function(doc) {
+          gameArray.push({ ...doc.data(), schoolYear: doc.id });
+        });
+        return gameArray;
+      })
+  );
 };
 
+//TODO: Limit search to school's games only - error handling
 export const getSingleGame = gameId => {
   return db
-    .collection("games")
+    .collection('games')
     .doc(gameId)
     .get()
     .then(function(doc) {
