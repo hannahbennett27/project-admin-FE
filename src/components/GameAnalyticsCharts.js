@@ -40,15 +40,7 @@ const generateRatingsLine = playersData => {
   const aveCashAvail = cashAvailTotals.map(cash => cash / players.length);
 
   let lineData = {
-    labels: [
-      'Start',
-      'Intro',
-      'Chapter One',
-      'Chapter Two',
-      'Chapter Three',
-      'Chapter Four',
-      'Finish'
-    ],
+    labels: ['Start', 'Intro', 'Chapter One', 'Chapter Two', 'Finish'],
     datasets: [
       {
         label: 'Credit Rating - Class Average',
