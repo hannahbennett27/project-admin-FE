@@ -1,9 +1,8 @@
-import React, { Component } from 'react';
-import { dbgames } from '../firebase';
-import AuthUserContext from './AuthUserContext';
-import { Link } from 'react-router-dom';
-import Header from './Header';
-import GameAnalyticsCharts from './GameAnalyticsCharts';
+import React, { Component } from "react";
+import { dbgames } from "../firebase";
+import AuthUserContext from "./AuthUserContext";
+import { Link } from "react-router-dom";
+import GameAnalyticsCharts from "./GameAnalyticsCharts";
 
 class GameAnalytics extends Component {
   state = {
@@ -18,35 +17,41 @@ class GameAnalytics extends Component {
   }
 
   render() {
-    const { schoolYear, players: playersData } = this.state.game;
+    const { players: playersData } = this.state.game;
 
     return this.state.game.schoolYear ? (
       <div className="container-fluid bg-white">
         <div className="row">
           <div className="col-2 border-right bg-light">
             <ul className="list-unstyled">
-              <li className="mb-2 mt-2">
-                <h2>
-                  {schoolYear}, {this.props.user.schoolName}
-                </h2>
-              </li>
-              <li className="mb-2">
-                <Link to={'/changepassword'}>
-                  <i class="fas fa-user-circle" /> Update Account
+              <li className="mb-2 mt-2">{this.props.user.schoolName} </li>
+              <li className="mb-2 text-secondary">
+                <Link to={"/account"}>
+                  <span className="text-secondary">Account Summary</span>
                 </Link>
               </li>
-              <li className="mb-2">
-                <Link to={'/account/games'}>
-                  <i class="fas fa-gamepad" /> Saved games
+              <li className="mb-2 ">
+                <Link to={"/changepassword"}>
+                  <span className="text-secondary">
+                    {" "}
+                    <i class="fas fa-user-circle" /> Update Account
+                  </span>
                 </Link>
               </li>
-              <li className="mb-2">
-                <Link to={'/account'}>Account Summary</Link>
+              <li className="mb-2 text-secondary">
+                <Link to={"/account/games"}>
+                  <span className="text-secondary">
+                    {" "}
+                    <i class="fas fa-gamepad" /> Saved games
+                  </span>
+                </Link>
               </li>
             </ul>
           </div>
           <div className="col-10">
-            <Header />
+            <h2 className="display-2 text-center">
+              {this.state.game.sessionName}
+            </h2>
             {this.props.user && (
               <div>
                 <div className="container">

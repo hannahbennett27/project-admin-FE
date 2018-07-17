@@ -1,9 +1,7 @@
-
 import React, { Component } from "react";
 import { dbgames } from "../firebase";
 import { Link } from "react-router-dom";
 import AuthUserContext from "./AuthUserContext";
-
 
 class Games extends Component {
   state = { games: [] };
@@ -18,14 +16,14 @@ class Games extends Component {
   //TODO: Maybe try componentDidUpdate here - /account/games not working on refresh
 
   render() {
-
     return this.state.games ? (
       <div>
-        <h3 className="text-center">Previous Game Sessions</h3>
+        <h3 className="display-3 text-center mt-4">Previous Game Sessions</h3>
         <table className="table table-striped">
           <thead>
             <tr>
               <th scope="col">#</th>
+              <th scope="col">Session Name</th>
               <th scope="col">School Year</th>
               <th scope="col">Game ID</th>
               <th scope="col">Session Date</th>
@@ -36,14 +34,14 @@ class Games extends Component {
               return (
                 <tr>
                   <td>{index + 1}</td>
+                  <td>{game.sessionName}</td>
                   <td>{game.schoolYear} </td>
                   <td>
                     <Link to={`/account/games/${game.gameId}`}>
                       {game.gameId}
-
                     </Link>
                   </td>
-                  <td>01/12/18</td>
+                  <td>{game.created}</td>
                 </tr>
               );
             })}
@@ -54,7 +52,6 @@ class Games extends Component {
       <div id="loader" />
     );
   }
-
 }
 
 export default props => {
