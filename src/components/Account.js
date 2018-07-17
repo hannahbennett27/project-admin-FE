@@ -1,9 +1,9 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import AuthUserContext from "./AuthUserContext";
-import NewGame from "./NewGame";
-import Header from "./Header";
-import Games from "./Games";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import AuthUserContext from './AuthUserContext';
+import NewGame from './NewGame';
+import Header from './Header';
+import Games from './Games';
 
 const Account = () => {
   return (
@@ -24,18 +24,18 @@ const userAcc = (
             <h2>Account Page</h2>
           </li>
           <li className="mb-2">
-            <Link to={"/changepassword"}>
+            <Link to={'/changepassword'}>
               <span className="text-secondary">
-                {" "}
-                <i class="fas fa-user-circle" /> Update Account
+                {' '}
+                <i className="fas fa-user-circle" /> Update Account
               </span>
             </Link>
           </li>
           <li className="mb-2">
-            <Link to={"/account/games"}>
+            <Link to={'/account/games'}>
               <span className="text-secondary">
-                {" "}
-                <i class="fas fa-gamepad" /> Saved games
+                {' '}
+                <i className="fas fa-gamepad" /> Saved games
               </span>
             </Link>
           </li>
@@ -49,7 +49,10 @@ const userAcc = (
               <NewGame />
             </div>
             <div className="col-6">
-              <img src="https://i2.wp.com/reactscript.com/wp-content/uploads/2017/01/React-wrapper-for-Chart.js-2.png" />
+              <img
+                src="https://i2.wp.com/reactscript.com/wp-content/uploads/2017/01/React-wrapper-for-Chart.js-2.png"
+                alt="chart-placeholder"
+              />
             </div>
           </div>
         </div>
@@ -60,7 +63,6 @@ const userAcc = (
         </div>
       </div>
     </div>
-
   </div>
 );
 

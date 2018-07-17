@@ -15,11 +15,11 @@ const userNav = (
   <nav className="navbar navbar-expand-lg sticky-top navbar-light bg-light border-bottom">
     <Link to={"/"}>
       <h1 className="navbar-brand">
-        <i class="fas fa-piggy-bank" />{" "}
+        <i className="fas fa-piggy-bank" />{" "}
       </h1>
     </Link>
     <div className="collapse navbar-collapse" id="navbarSupportedContent" />
-    <ul class="navbar-nav navbar-right">
+    <ul className="navbar-nav navbar-right">
       <li className="nav-item">
         <Link to={"/account"}>
           <button className="btn btn-outline-dark mr-2">Account</button>
@@ -36,11 +36,11 @@ const nullUserNav = (
   <nav className="navbar navbar-expand-lg navbar-light bg-light border-bottom">
     <Link to={"/"}>
       <h1 className="navbar-brand">
-        <i class="fas fa-piggy-bank" />{" "}
+        <i className="fas fa-piggy-bank" />{" "}
       </h1>
     </Link>
     <div className="collapse navbar-collapse" id="navbarSupportedContent" />
-    <ul class="navbar-nav navbar-right">
+    <ul className="navbar-nav navbar-right">
       <li className="nav-item">
         <Link to={"/signin"}>
           <button className="btn btn-outline-dark mr-2">

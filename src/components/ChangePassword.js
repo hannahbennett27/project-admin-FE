@@ -60,7 +60,7 @@ class ChangePassword extends Component {
             <div className="col col-lg-2" />
             <div className="col-md-auto text-center">
               {this.renderRedirect()}
-              <i class="fas fa-unlock" />
+              <i className="fas fa-unlock" />
               <br />
               <h5>Change Password</h5>
               {changePasswordForm}

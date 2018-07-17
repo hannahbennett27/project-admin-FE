@@ -1,5 +1,5 @@
-import React from "react";
-import { Line } from "react-chartjs-2";
+import React from 'react';
+import { Line } from 'react-chartjs-2';
 
 const GameAnalyticsCharts = ({ playersData }) => {
   return generateRatingsLine(playersData);
@@ -8,57 +8,72 @@ const GameAnalyticsCharts = ({ playersData }) => {
 const generateRatingsLine = playersData => {
   const players = Object.keys(playersData);
 
-  const ratingTotals = players.reduce((acc, player) => {
-    playersData[player].rating.forEach((el, index) => {
-      acc[index] ? (acc[index] += el) : (acc[index] = el);
-    });
-    return acc;
-  }, []);
-
-  //TODO: creditSpent in database => creditAvailable
-  const creditAvailTotals = players.reduce((acc, player) => {
-    playersData[player].creditSpent.forEach((el, index) => {
-      acc[index] ? (acc[index] += el) : (acc[index] = el);
-    });
-    return acc;
-  }, []);
-
-  const cashAvailTotals = players.reduce((acc, player) => {
-    playersData[player].cash.forEach((el, index) => {
-      acc[index] ? (acc[index] += el) : (acc[index] = el);
-    });
-    return acc;
-  }, []);
-
-  //TODO: remove '* 100'
-  const aveRating = ratingTotals.map(rating => (rating / players.length) * 100);
-
-  const aveCreditAvail = creditAvailTotals.map(
-    credit => credit / players.length
+  const ratingTotals = players.reduce(
+    (acc, player) => {
+      playersData[player].rating.forEach((el, index) => {
+        acc.data[index] ? (acc.data[index] += el) : (acc.data[index] = el);
+        acc.count[index] ? acc.count[index]++ : (acc.count[index] = 1);
+      });
+      return acc;
+    },
+    { data: [], count: [] }
   );
 
-  const aveCashAvail = cashAvailTotals.map(cash => cash / players.length);
+  const creditAvailTotals = players.reduce(
+    (acc, player) => {
+      playersData[player].creditAvail.forEach((el, index) => {
+        acc.data[index] ? (acc.data[index] += el) : (acc.data[index] = el);
+        acc.count[index] ? acc.count[index]++ : (acc.count[index] = 1);
+      });
+      return acc;
+    },
+    { data: [], count: [] }
+  );
+
+  const cashAvailTotals = players.reduce(
+    (acc, player) => {
+      playersData[player].cashAvail.forEach((el, index) => {
+        acc.data[index] ? (acc.data[index] += el) : (acc.data[index] = el);
+        acc.count[index] ? acc.count[index]++ : (acc.count[index] = 1);
+      });
+      return acc;
+    },
+    { data: [], count: [] }
+  );
+
+  //TODO: remove '* 100'
+  const aveRating = ratingTotals.data.map((rating, index) =>
+    ((rating / ratingTotals.count[index]) * 100).toFixed(0)
+  );
+
+  const aveCreditAvail = creditAvailTotals.data.map((credit, index) =>
+    ((credit / creditAvailTotals.count[index]) * 100).toFixed(0)
+  );
+
+  const aveCashAvail = cashAvailTotals.data.map((cash, index) =>
+    ((cash / cashAvailTotals.count[index]) * 100).toFixed(0)
+  );
 
   let lineData = {
-    labels: ["Start", "Intro", "Chapter One", "Chapter Two", "Finish"],
+    labels: ['Start', 'Intro', 'Chapter One', 'Chapter Two', 'Finish'],
     datasets: [
       {
-        label: "Credit Rating",
-        borderColor: "red",
+        label: 'Credit Rating',
+        borderColor: 'red',
         fill: false,
         lineTension: 0,
         data: aveRating
       },
       {
-        label: "Credit Available",
-        borderColor: "blue",
+        label: 'Credit Available',
+        borderColor: 'blue',
         fill: false,
         lineTension: 0,
         data: aveCreditAvail
       },
       {
-        label: "Cash Available",
-        borderColor: "purple",
+        label: 'Cash Available',
+        borderColor: 'purple',
         fill: false,
         lineTension: 0,
         data: aveCashAvail

@@ -62,7 +62,7 @@ class SignIn extends Component {
             <div className="col col-lg-2" />
             <div className="col-md-auto text-center">
               {this.renderRedirect()}
-              <i class="fas fa-user" />
+              <i className="fas fa-user" />
               <br />
               <h5>Sign In</h5>
               {signInForm}
