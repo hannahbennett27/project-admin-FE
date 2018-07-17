@@ -1,5 +1,5 @@
-import React from 'react';
-import { Line } from 'react-chartjs-2';
+import React from "react";
+import { Line } from "react-chartjs-2";
 
 const GameAnalyticsCharts = ({ playersData }) => {
   return generateRatingsLine(playersData);
@@ -40,26 +40,26 @@ const generateRatingsLine = playersData => {
   const aveCashAvail = cashAvailTotals.map(cash => cash / players.length);
 
   let lineData = {
-    labels: ['Start', 'Intro', 'Chapter One', 'Chapter Two', 'Finish'],
+    labels: ["Start", "Intro", "Chapter One", "Chapter Two", "Finish"],
     datasets: [
       {
-        label: 'Credit Rating - Class Average',
-        borderColor: 'red',
-        backgroundColor: 'white',
+        label: "Credit Rating",
+        borderColor: "red",
+        fill: false,
         lineTension: 0,
         data: aveRating
       },
       {
-        label: 'Credit Available - Class Average',
-        borderColor: 'blue',
-        backgroundColor: 'white',
+        label: "Credit Available",
+        borderColor: "blue",
+        fill: false,
         lineTension: 0,
         data: aveCreditAvail
       },
       {
-        label: 'Cash Available - Class Average',
-        borderColor: 'purple',
-        backgroundColor: 'white',
+        label: "Cash Available",
+        borderColor: "purple",
+        fill: false,
         lineTension: 0,
         data: aveCashAvail
       }

@@ -66,7 +66,7 @@ class ChangePassword extends Component {
               {changePasswordForm}
               {error && <p>{error.message}</p>}
               <p>
-                <Link to={"/"}>Back</Link>
+                <Link to={"/account"}>Back</Link>
               </p>
             </div>
             <div className="col col-lg-2" />

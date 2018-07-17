@@ -4,7 +4,7 @@ const Home = () => {
     <div>
       <h1 className="display-1 text-center mb-5 mt-5">
         Bacon<span>
-          <i class="fas fa-piggy-bank display-4" />
+          <i className="fas fa-piggy-bank display-4" id="pig" />
         </span>
       </h1>
       <div className="row">
