@@ -28,22 +28,22 @@ class GameAnalytics extends Component {
             <ul className="list-unstyled">
               <li className="mb-2 mt-2">{this.props.user.schoolName} </li>
               <li className="mb-2 text-secondary">
-                <Link to={'/account'}>
+                <Link to={"/account"}>
                   <span className="text-secondary">Account Summary</span>
                 </Link>
               </li>
               <li className="mb-2 ">
-                <Link to={'/changepassword'}>
+                <Link to={"/changepassword"}>
                   <span className="text-secondary">
-                    {' '}
+                    {" "}
                     <i className="fas fa-user-circle" /> Update Account
                   </span>
                 </Link>
               </li>
               <li className="mb-2 text-secondary">
-                <Link to={'/account/games'}>
+                <Link to={"/account/games"}>
                   <span className="text-secondary">
-                    {' '}
+                    {" "}
                     <i className="fas fa-gamepad" /> Saved games
                   </span>
                 </Link>

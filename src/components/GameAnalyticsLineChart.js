@@ -1,43 +1,49 @@
-import React, { Component } from 'react';
-import { Line } from 'react-chartjs-2';
-import * as lineChartData from '../dataAnalysis/generateLineChartData';
+import React, { Component } from "react";
+import { Line } from "react-chartjs-2";
+import Select from "react-select";
+import "react-select/dist/react-select.css";
+import * as lineChartData from "../dataAnalysis/generateLineChartData";
 
 class LineChart extends Component {
   state = {
-    select: 'All'
+    selectedStudent: "Class Average"
     // select: 'Paddy'
   };
 
   render() {
     const { playersData } = this.props;
-    const { select } = this.state;
+    const { selectedStudent } = this.state;
     const players = Object.keys(playersData);
 
     const averages = lineChartData.generateAverages(playersData, players);
-    const playerData = playersData[select];
+    const playerData = playersData[selectedStudent];
 
-    const dataLookUp = select === 'All' ? averages : playerData;
+    const dataLookUp =
+      selectedStudent === "Class Average" || null ? averages : playerData;
+
+    players.push("Class Average");
 
     let lineData = {
       labels: ['Start', '', '', '', '', 'Finish'],
+
       datasets: [
         {
-          label: 'Credit Rating',
-          borderColor: 'red',
+          label: "Credit Rating",
+          borderColor: "red",
           fill: false,
           lineTension: 0,
           data: dataLookUp.rating
         },
         {
-          label: 'Credit Available',
-          borderColor: 'blue',
+          label: "Credit Available",
+          borderColor: "blue",
           fill: false,
           lineTension: 0,
           data: dataLookUp.creditAvail
         },
         {
-          label: 'Cash Available',
-          borderColor: 'purple',
+          label: "Cash Available",
+          borderColor: "purple",
           fill: false,
           lineTension: 0,
           data: dataLookUp.cashAvail
@@ -45,8 +51,33 @@ class LineChart extends Component {
       ]
     };
 
-    return <Line data={lineData} />;
+    return (
+      <div>
+        <Select
+          className="student-select"
+          name="student-progress-filter"
+          value={this.state.selectedStudent}
+          onChange={this.handleChange}
+          options={players.map(player => {
+            return { value: player, label: player };
+          })}
+        />{" "}
+        <Line data={lineData} />
+      </div>
+    );
   }
+
+  handleChange = selectedStudent => {
+    if (selectedStudent === null) {
+      this.setState({ selectedStudent: "Class Average" });
+    } else {
+      this.setState({ selectedStudent: selectedStudent.label });
+    }
+    // selectedOption can be null when the `x` (close) button is clicked
+    if (selectedStudent) {
+      console.log(`Selected: ${selectedStudent.label}`);
+    }
+  };
 }
 
 export default LineChart;
