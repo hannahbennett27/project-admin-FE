@@ -1,13 +1,26 @@
 import React from 'react';
-import { Polar } from 'react-chartjs-2';
+import { Pie, Polar } from 'react-chartjs-2';
 import * as completePolarData from '../dataAnalysis/generateCompletePolarData';
 
-const PolarChartComplete = ({ playersData }) => {
-  const players = Object.keys(playersData);
+const PolarChartComplete = ({ playersData, userId }) => {
+  if (playersData) {
+    const players = Object.keys(playersData);
+    let total = completePolarData.generateTotal(playersData, players);
 
-  const total = completePolarData.generateTotal(playersData, players);
+    return (
+      <div className="mb-4">
+        <Polar data={total} />
+      </div>
+    );
+  } else {
+    let total = completePolarData.generateOverallTotal();
 
-  return <Polar data={total} />;
+    return (
+      <div className="mb-4 mt-5 jumbotron bg-light">
+        <Pie data={total} />
+      </div>
+    );
+  }
 };
 
 export default PolarChartComplete;
