@@ -6,9 +6,7 @@ import * as culturePolarData from "../dataAnalysis/generateCulturePolarData";
 
 class PolarChartCulture extends Component {
   state = {
- 
     selectedChoice: "night"
-    
   };
 
   render() {
@@ -24,20 +22,22 @@ class PolarChartCulture extends Component {
     );
 
     return (
-      <div>
-        <Select
-          className="student-select"
-          name="culture-filter"
-          value={this.state.selectedChoice}
-          onChange={this.handleChange}
-          options={choices.map(choice => {
-            return { value: choice, label: choice };
-          })}
-        />
+      <div className="jumbotron bg-light">
+        <h1>Cultural Decisions</h1>
         <Polar data={totals} />
+        <div className="mb-5">
+          <Select
+            className="student-select mx-auto"
+            name="culture-filter"
+            value={this.state.selectedChoice}
+            onChange={this.handleChange}
+            options={choices.map(choice => {
+              return { value: choice, label: choice };
+            })}
+          />
+        </div>
       </div>
     );
-
   }
   handleChange = selectedChoice => {
     if (selectedChoice === null) {
