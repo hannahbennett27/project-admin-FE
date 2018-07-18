@@ -19,3 +19,17 @@ export const generateTotal = (playersData, players) => {
 
   return total;
 };
+
+export const generateOverallTotal = () => {
+  const total = {
+    datasets: [
+      {
+        data: [10, 20],
+        backgroundColor: ['red', 'yellow']
+      }
+    ],
+    labels: ['Win', 'Lose']
+  };
+
+  return total;
+};

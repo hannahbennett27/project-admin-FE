@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import { dbgames } from "../firebase";
-import { Link } from "react-router-dom";
-import AuthUserContext from "./AuthUserContext";
+import React, { Component } from 'react';
+import { dbgames } from '../firebase';
+import { Link } from 'react-router-dom';
+import AuthUserContext from './AuthUserContext';
 
 class Games extends Component {
   state = { games: [] };
@@ -12,8 +12,6 @@ class Games extends Component {
       this.setState({ games });
     });
   }
-
-  //TODO: Maybe try componentDidUpdate here - /account/games not working on refresh
 
   render() {
     return this.state.games ? (

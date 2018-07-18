@@ -4,6 +4,7 @@ import AuthUserContext from './AuthUserContext';
 import NewGame from './NewGame';
 import Header from './Header';
 import Games from './Games';
+import PolarChartComplete from './PolarChartComplete';
 
 const Account = () => {
   return (
@@ -49,10 +50,7 @@ const userAcc = (
               <NewGame />
             </div>
             <div className="col-6">
-              <img
-                src="https://i2.wp.com/reactscript.com/wp-content/uploads/2017/01/React-wrapper-for-Chart.js-2.png"
-                alt="chart-placeholder"
-              />
+              <PolarChartComplete />
             </div>
           </div>
         </div>
