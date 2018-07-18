@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Line } from 'react-chartjs-2';
 import * as lineChartData from '../dataAnalysis/generateLineChartData';
 
-class GameAnalyticsLineChart extends Component {
+class LineChart extends Component {
   state = {
     select: 'All'
     // select: 'Paddy'
@@ -19,14 +19,7 @@ class GameAnalyticsLineChart extends Component {
     const dataLookUp = select === 'All' ? averages : playerData;
 
     let lineData = {
-      labels: [
-        'Start',
-        'Intro',
-        'Chapter One',
-        'Chapter Two',
-        'Chapter Three',
-        'Finish'
-      ],
+      labels: ['Start', '', '', '', '', 'Finish'],
       datasets: [
         {
           label: 'Credit Rating',
@@ -56,4 +49,4 @@ class GameAnalyticsLineChart extends Component {
   }
 }
 
-export default GameAnalyticsLineChart;
+export default LineChart;
