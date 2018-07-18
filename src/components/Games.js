@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import { dbgames } from '../firebase';
-import { Link } from 'react-router-dom';
-import AuthUserContext from './AuthUserContext';
+import React, { Component } from "react";
+import { dbgames } from "../firebase";
+import { Link } from "react-router-dom";
+import AuthUserContext from "./AuthUserContext";
 
 class Games extends Component {
   state = { games: [] };
@@ -18,7 +18,7 @@ class Games extends Component {
   render() {
     return this.state.games ? (
       <div>
-        <h3 className="display-3 text-center mt-4">Previous Game Sessions</h3>
+        <h3 className="display-4 text-center mt-4">Previous Game Sessions</h3>
         <table className="table table-striped">
           <thead>
             <tr>

@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-import { dbgames } from '../firebase';
-import AuthUserContext from './AuthUserContext';
-import { Link } from 'react-router-dom';
-import GameAnalyticsLineChart from './GameAnalyticsLineChart';
-import PolarChartCulture from './PolarChartCulture';
-import PolarChartComplete from './PolarChartComplete';
+import React, { Component } from "react";
+import { dbgames } from "../firebase";
+import AuthUserContext from "./AuthUserContext";
+import { Link } from "react-router-dom";
+import GameAnalyticsLineChart from "./GameAnalyticsLineChart";
+import PolarChartCulture from "./PolarChartCulture";
+import PolarChartComplete from "./PolarChartComplete";
 
 class GameAnalytics extends Component {
   state = {
@@ -19,8 +19,8 @@ class GameAnalytics extends Component {
   }
 
   render() {
-    const { players: playersData } = this.state.game;
-
+    const { players: playersData, sessionName } = this.state.game;
+    const { gameId } = this.props.match.params;
     return this.state.game.schoolYear && this.props.user ? (
       <div className="container-fluid bg-white">
         <div className="row">
@@ -51,9 +51,10 @@ class GameAnalytics extends Component {
             </ul>
           </div>
           <div className="col-10">
-            <h2 className="display-2 text-center">
-              {this.state.game.sessionName}
-            </h2>
+            <h2 className="display-4 text-center">{sessionName}</h2>
+            <h6 className="text-center">
+              Please have players enter {gameId} to log into this session{" "}
+            </h6>
             {this.props.user && (
               <div>
                 <div className="container">
@@ -61,8 +62,14 @@ class GameAnalytics extends Component {
                 </div>
                 <div className="container">
                   <div className="row">
-                    <PolarChartCulture playersData={playersData} />
-                    <PolarChartComplete playersData={playersData} />
+                    <div className="col-10 mt-5 mx-auto">
+                      <PolarChartCulture playersData={playersData} />
+                    </div>
+                  </div>
+                  <div className="row">
+                    <div className="col-10 mt-5 mx-auto">
+                      <PolarChartComplete playersData={playersData} />
+                    </div>
                   </div>
                 </div>
               </div>
