@@ -53,17 +53,17 @@ class LineChart extends Component {
     };
 
     return (
-      <div>
+      <div className="jumbotron bg-light">
+        <h1>Class Average</h1>
+        <Line data={lineData} />
         <Select
-          className="student-select"
+          className="student-select mx-auto"
           name="student-progress-filter"
           value={this.state.selectedStudent}
           onChange={this.handleChange}
           options={players.map(player => {
             return { value: player, label: player };
           })}
-        />{' '}
-        <Line data={lineData} />
       </div>
     );
   }

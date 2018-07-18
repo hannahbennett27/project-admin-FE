@@ -84,7 +84,7 @@ class GameAnalytics extends Component {
                     </div>
                   </div>
                   <div className="row">
-                    <div className="col-10 mt-5 mx-auto">
+                    <div className="col-10 mt-5 mx-auto jumbotron bg-light">
                       <PolarChartComplete playersData={playersData} />
                     </div>
                   </div>
