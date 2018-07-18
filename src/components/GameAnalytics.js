@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { dbgames } from '../firebase';
 import AuthUserContext from './AuthUserContext';
 import { Link } from 'react-router-dom';
-import LineChart from './LineChart';
+import GameAnalyticsLineChart from './GameAnalyticsLineChart';
 import PolarChartCulture from './PolarChartCulture';
 import PolarChartComplete from './PolarChartComplete';
 
@@ -57,7 +57,7 @@ class GameAnalytics extends Component {
             {this.props.user && (
               <div>
                 <div className="container">
-                  <LineChart playersData={playersData} />
+                  <GameAnalyticsLineChart playersData={playersData} />
                 </div>
                 <div className="container">
                   <div className="row">
