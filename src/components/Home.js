@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 const Home = () => {
   return (
     <div>
@@ -21,14 +21,16 @@ const Home = () => {
             <i className="fas fa-chart-line display-3" />
             <h2 className="mt-2">Analysis</h2>
             <p>
-             Collects data on player choices, giving real-time and
+              Collects data on player choices, giving real-time and
               retrospective visual feedback to the teacher
             </p>
           </div>
           <div className="col-4 text-center">
             <i className="fas fa-question display-3" />
             <h2 className="mt-2">Realistic</h2>
+
             <p>In-game circumstances and decision making mimic real life</p>
+
           </div>
           <div className="col-4 text-center">
             <i className="fas fa-plus display-3" />

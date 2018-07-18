@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { dbgames } from '../firebase';
 import AuthUserContext from './AuthUserContext';
 import { Link } from 'react-router-dom';
-import GameAnalyticsCharts from './GameAnalyticsCharts';
+import GameAnalyticsLineChart from './GameAnalyticsLineChart';
 
 class GameAnalytics extends Component {
   state = {
@@ -55,7 +55,7 @@ class GameAnalytics extends Component {
             {this.props.user && (
               <div>
                 <div className="container">
-                  <GameAnalyticsCharts playersData={playersData} />
+                  <GameAnalyticsLineChart playersData={playersData} />
                 </div>
                 <div className="container">
                   <div className="row">

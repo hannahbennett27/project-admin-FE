@@ -1,16 +1,19 @@
-import React from "react";
-import { auth } from "../firebase";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { auth } from '../firebase';
 
 const SignOut = () => {
   return (
-    <button
-      className="btn btn-outline-dark"
-      type="submit"
-      value="Sign Out"
-      onClick={handleSignOut}
-    >
-      Sign Out
-    </button>
+    <Link to={'/'}>
+      <button
+        className="btn btn-outline-dark"
+        type="submit"
+        value="Sign Out"
+        onClick={handleSignOut}
+      >
+        Sign Out
+      </button>
+    </Link>
   );
 };
 
