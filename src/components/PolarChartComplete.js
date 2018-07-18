@@ -1,22 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Polar } from 'react-chartjs-2';
+import * as completePolarData from '../dataAnalysis/generateCompletePolarData';
 
-class PolarChartComplete extends Component {
-  render() {
-    // const { playersData } = this.props;
+const PolarChartComplete = ({ playersData }) => {
+  const players = Object.keys(playersData);
 
-    let polarData = {
-      datasets: [
-        {
-          data: [20, 30, 10],
-          backgroundColor: ['red', 'yellow', 'blue']
-        }
-      ],
-      labels: ['Red', 'Yellow', 'Blue']
-    };
+  const total = completePolarData.generateTotal(playersData, players);
 
-    return <Polar data={polarData} />;
-  }
-}
+  return <Polar data={total} />;
+};
 
 export default PolarChartComplete;

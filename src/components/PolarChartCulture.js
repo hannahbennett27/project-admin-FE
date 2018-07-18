@@ -6,11 +6,9 @@ import * as culturePolarData from "../dataAnalysis/generateCulturePolarData";
 
 class PolarChartCulture extends Component {
   state = {
-    // choice: 'card'
-    // choice: 'careerProgression'
-    // choice: 'clothing'
+ 
     selectedChoice: "night"
-    // choice: 'phone',
+    
   };
 
   render() {
@@ -25,8 +23,6 @@ class PolarChartCulture extends Component {
       selectedChoice
     );
 
-    let polarData = totals;
-
     return (
       <div>
         <Select
@@ -38,9 +34,10 @@ class PolarChartCulture extends Component {
             return { value: choice, label: choice };
           })}
         />
-        <Polar data={polarData} />
+        <Polar data={totals} />
       </div>
     );
+
   }
   handleChange = selectedChoice => {
     if (selectedChoice === null) {
