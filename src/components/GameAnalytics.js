@@ -1,8 +1,10 @@
-import React, { Component } from "react";
-import { dbgames } from "../firebase";
-import AuthUserContext from "./AuthUserContext";
-import { Link } from "react-router-dom";
-import GameAnalyticsLineChart from "./GameAnalyticsLineChart";
+import React, { Component } from 'react';
+import { dbgames } from '../firebase';
+import AuthUserContext from './AuthUserContext';
+import { Link } from 'react-router-dom';
+import GameAnalyticsLineChart from './GameAnalyticsLineChart';
+import PolarChartCulture from './PolarChartCulture';
+import PolarChartComplete from './PolarChartComplete';
 
 class GameAnalytics extends Component {
   state = {
@@ -59,18 +61,8 @@ class GameAnalytics extends Component {
                 </div>
                 <div className="container">
                   <div className="row">
-                    <div className="col-6">
-                      <img
-                        src="https://i2.wp.com/reactscript.com/wp-content/uploads/2017/01/React-wrapper-for-Chart.js-2.png"
-                        alt="chart-placeholder"
-                      />
-                    </div>
-                    <div className="col-6">
-                      <img
-                        src="https://i2.wp.com/reactscript.com/wp-content/uploads/2017/01/React-wrapper-for-Chart.js-2.png"
-                        alt="chart-placeholder"
-                      />
-                    </div>
+                    <PolarChartCulture playersData={playersData} />
+                    <PolarChartComplete playersData={playersData} />
                   </div>
                 </div>
               </div>

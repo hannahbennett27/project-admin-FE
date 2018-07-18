@@ -4,7 +4,7 @@ import Select from "react-select";
 import "react-select/dist/react-select.css";
 import * as lineChartData from "../dataAnalysis/generateLineChartData";
 
-class GameAnalyticsLineChart extends Component {
+class LineChart extends Component {
   state = {
     selectedStudent: "Class Average"
     // select: 'Paddy'
@@ -24,14 +24,8 @@ class GameAnalyticsLineChart extends Component {
     players.push("Class Average");
 
     let lineData = {
-      labels: [
-        "Start",
-        "Intro",
-        "Chapter One",
-        "Chapter Two",
-        "Chapter Three",
-        "Finish"
-      ],
+      labels: ['Start', '', '', '', '', 'Finish'],
+
       datasets: [
         {
           label: "Credit Rating",
@@ -86,4 +80,4 @@ class GameAnalyticsLineChart extends Component {
   };
 }
 
-export default GameAnalyticsLineChart;
+export default LineChart;
