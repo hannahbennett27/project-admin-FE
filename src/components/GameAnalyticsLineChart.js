@@ -21,10 +21,10 @@ class LineChart extends Component {
     const dataLookUp =
       selectedStudent === "Class Average" || null ? averages : playerData;
 
-    players.push("Class Average");
+    players.unshift("Class Average");
 
     let lineData = {
-      labels: ['Start', '', '', '', '', 'Finish'],
+      labels: ["Start", "", "", "", "", "Finish"],
 
       datasets: [
         {
