@@ -1,8 +1,4 @@
 export const generateTotals = (playersData, players, choice) => {
-  // console.log(playersData);
-  // console.log(players);
-  // console.log(choice);
-
   const lookUp = {
     card: {
       data: [0, 0, 0, 0],
@@ -43,8 +39,6 @@ export const generateTotals = (playersData, players, choice) => {
       ? ++lookUpRef.data[lookUpRef.dataIndex[decision]]
       : null;
   });
-
-  console.log(lookUp[choice].data);
 
   const totals = {
     datasets: [
