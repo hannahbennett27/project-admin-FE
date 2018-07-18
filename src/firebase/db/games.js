@@ -44,13 +44,11 @@ export const getGamesByYear = year => {
   );
 };
 
-//TODO: Limit search to school's games only - error handling
 export const getSingleGame = gameId => {
   return db
     .collection('games')
     .doc(gameId)
-    .get()
-    .then(function(doc) {
-      return doc.data();
+    .onSnapshot(docSnapshot => {
+      return docSnapshot.data();
     });
 };
