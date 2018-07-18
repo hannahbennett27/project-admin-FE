@@ -1,8 +1,8 @@
-import React from 'react';
-import { Pie, Polar } from 'react-chartjs-2';
-import * as completePolarData from '../dataAnalysis/generateCompletePolarData';
+import React from "react";
+import { Pie, Polar } from "react-chartjs-2";
+import * as completePolarData from "../dataAnalysis/generateCompletePolarData";
 
-const PolarChartComplete = ({ playersData, userId }) => {
+const PolarChartComplete = ({ playersData }) => {
   if (playersData) {
     const players = Object.keys(playersData);
     let total = completePolarData.generateTotal(playersData, players);
