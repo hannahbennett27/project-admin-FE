@@ -1,5 +1,6 @@
+
 import React, { Component } from "react";
-import { dbgames } from "../firebase";
+import { db } from '../firebase/firebase';
 import AuthUserContext from "./AuthUserContext";
 import { Link, Redirect } from "react-router-dom";
 import LineChart from "./LineChart";
@@ -15,25 +16,28 @@ class GameAnalytics extends Component {
 
   componentDidMount() {
     const { gameId } = this.props.match.params;
-    dbgames
-      .getSingleGame(gameId)
-      .then(game => {
-        this.setState({ game, loaded: true });
-      })
-      .catch(err => {
+
+    db.collection('games')
+      .doc(gameId)
+      .onSnapshot(docSnapshot => {
+        this.setState({ game: docSnapshot.data(),  loaded: true});
+      }).catch(err => {
         this.props.history.push("/404");
         this.setState({
           invalidUrl: true
         });
       });
+
   }
 
   render() {
     const { players: playersData, sessionName } = this.state.game;
     const { gameId } = this.props.match.params;
+
     return this.state.invalidUrl ? (
       <Redirect to="/404" />
     ) : this.state.loaded && this.props.user ? (
+
       <div className="container-fluid bg-white">
         <div className="row">
           <div className="col-2 border-right bg-light">
