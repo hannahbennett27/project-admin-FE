@@ -2,7 +2,7 @@ import React from 'react';
 const Home = () => {
   return (
     <div>
-      <h1 className="display-1 text-center mb-5 mt-5">Bacon</h1>
+      <h1 className="display-1 text-center mb-5 mt-5">Credit Wise</h1>
       <div className="row">
         <div className="col-1" />
         <div className="container col-10">
@@ -30,7 +30,6 @@ const Home = () => {
             <h2 className="mt-2">Realistic</h2>
 
             <p>In-game circumstances and decision making mimic real life</p>
-
           </div>
           <div className="col-4 text-center">
             <i className="fas fa-plus display-3" />

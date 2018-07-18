@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { dbgames } from '../firebase';
+// import { dbgames } from '../firebase';
+import { db } from '../firebase/firebase';
 import AuthUserContext from './AuthUserContext';
 import { Link } from 'react-router-dom';
 import LineChart from './LineChart';
@@ -13,14 +14,20 @@ class GameAnalytics extends Component {
 
   componentDidMount() {
     const { gameId } = this.props.match.params;
-    dbgames.getSingleGame(gameId).then(game => {
-      this.setState({ game });
-    });
+    db.collection('games')
+      .doc(gameId)
+      .onSnapshot(docSnapshot => {
+        this.setState({ game: docSnapshot.data() });
+      });
+    // dbgames.getSingleGame(gameId).then(game => {
+    //   this.setState({ game });
+    // });
   }
 
   render() {
     const { players: playersData, sessionName } = this.state.game;
     const { gameId } = this.props.match.params;
+
     return this.state.game.schoolYear && this.props.user ? (
       <div className="container-fluid bg-white">
         <div className="row">

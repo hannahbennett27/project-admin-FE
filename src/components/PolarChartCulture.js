@@ -1,14 +1,12 @@
-import React, { Component } from "react";
-import { Polar } from "react-chartjs-2";
-import Select from "react-select";
-import "react-select/dist/react-select.css";
-import * as culturePolarData from "../dataAnalysis/generateCulturePolarData";
+import React, { Component } from 'react';
+import { Polar } from 'react-chartjs-2';
+import Select from 'react-select';
+import 'react-select/dist/react-select.css';
+import * as culturePolarData from '../dataAnalysis/generateCulturePolarData';
 
 class PolarChartCulture extends Component {
   state = {
- 
-    selectedChoice: "night"
-    
+    selectedChoice: 'card'
   };
 
   render() {
@@ -37,17 +35,13 @@ class PolarChartCulture extends Component {
         <Polar data={totals} />
       </div>
     );
-
   }
+
   handleChange = selectedChoice => {
     if (selectedChoice === null) {
-      this.setState({ selectedChoice: "card" });
+      this.setState({ selectedChoice: 'card' });
     } else {
       this.setState({ selectedChoice: selectedChoice.label });
-    }
-    // selectedOption can be null when the `x` (close) button is clicked
-    if (selectedChoice) {
-      console.log(`Selected: ${selectedChoice.label}`);
     }
   };
 }
