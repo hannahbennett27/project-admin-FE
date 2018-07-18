@@ -1,10 +1,10 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import AuthUserContext from './AuthUserContext';
-import NewGame from './NewGame';
-import Header from './Header';
-import Games from './Games';
-import PolarChartComplete from './PolarChartComplete';
+import React from "react";
+import { Link } from "react-router-dom";
+import AuthUserContext from "./AuthUserContext";
+import NewGame from "./NewGame";
+import Header from "./Header";
+import Games from "./Games";
+import PolarChartComplete from "./PolarChartComplete";
 
 const Account = () => {
   return (
@@ -25,17 +25,17 @@ const userAcc = (
             <h2>Account Page</h2>
           </li>
           <li className="mb-2">
-            <Link to={'/changepassword'}>
+            <Link to={"/changepassword"}>
               <span className="text-secondary">
-                {' '}
+                {" "}
                 <i className="fas fa-user-circle" /> Update Account
               </span>
             </Link>
           </li>
           <li className="mb-2">
-            <Link to={'/account/games'}>
+            <Link to={"/account/games"}>
               <span className="text-secondary">
-                {' '}
+                {" "}
                 <i className="fas fa-gamepad" /> Saved games
               </span>
             </Link>
@@ -67,7 +67,7 @@ const userAcc = (
 const nullUserAcc = (
   <div>
     <p>
-      Must be signed in to view page. <Link to={'/'}>Back</Link>
+      Must be signed in to view page. <Link to={"/"}>Back</Link>
     </p>
   </div>
 );

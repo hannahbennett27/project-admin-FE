@@ -6,7 +6,9 @@ import * as lineChartData from '../dataAnalysis/generateLineChartData';
 
 class LineChart extends Component {
   state = {
+
     selectedStudent: 'Class Average'
+
   };
 
   render() {
