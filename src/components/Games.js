@@ -1,20 +1,34 @@
-import React, { Component } from 'react';
-import { dbgames } from '../firebase';
-import { Link } from 'react-router-dom';
-import AuthUserContext from './AuthUserContext';
+import React, { Component } from "react";
+import { dbgames } from "../firebase";
+import { Link, Redirect } from "react-router-dom";
+import AuthUserContext from "./AuthUserContext";
 
 class Games extends Component {
-  state = { games: [] };
+  state = {
+    games: [],
+    loaded: false,
+    invalidURL: false
+  };
 
   componentDidMount() {
     const { id } = this.props.user;
-    dbgames.getAllGames(id).then(games => {
-      this.setState({ games });
-    });
+    dbgames
+      .getAllGames(id)
+      .then(games => {
+        this.setState({ games, loaded: true });
+      })
+      .catch(err => {
+        this.props.history.push("/404");
+        this.setState({
+          invalidUrl: true
+        });
+      });
   }
 
   render() {
-    return this.state.games ? (
+    return this.state.invalidUrl ? (
+      <Redirect to="/404" />
+    ) : this.state.loaded && this.state.games ? (
       <div>
         <h3 className="display-4 text-center mt-4">Previous Game Sessions</h3>
         <table className="table table-striped">
