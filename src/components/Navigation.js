@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import AuthUserContext from "./AuthUserContext";
 import SignOut from "./SignOut";
+import logo from "../images/logo.png";
 
 const Navigation = () => {
   return (
@@ -14,9 +15,7 @@ const Navigation = () => {
 const userNav = (
   <nav className="navbar navbar-expand-lg sticky-top navbar-light bg-light border-bottom">
     <Link to={"/"}>
-      <h1 className="navbar-brand">
-        <i className="fas fa-piggy-bank" />{" "}
-      </h1>
+      <img src={logo} alt="piggy logo" className="navbar-brand logo" />
     </Link>
     <div className="collapse navbar-collapse" id="navbarSupportedContent" />
     <ul className="navbar-nav navbar-right">
@@ -35,9 +34,7 @@ const userNav = (
 const nullUserNav = (
   <nav className="navbar navbar-expand-lg navbar-light bg-light border-bottom">
     <Link to={"/"}>
-      <h1 className="navbar-brand">
-        <i className="fas fa-piggy-bank" />{" "}
-      </h1>
+      <img src={logo} alt="piggy logo" className="navbar-brand logo" />
     </Link>
     <div className="collapse navbar-collapse" id="navbarSupportedContent" />
     <ul className="navbar-nav navbar-right">

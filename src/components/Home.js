@@ -2,11 +2,7 @@ import React from "react";
 const Home = () => {
   return (
     <div>
-      <h1 className="display-1 text-center mb-5 mt-5">
-        Bacon<span>
-          <i className="fas fa-piggy-bank display-4" id="pig" />
-        </span>
-      </h1>
+      <h1 className="display-1 text-center mb-5 mt-5">Bacon</h1>
       <div className="row">
         <div className="col-1" />
         <div className="container col-10">
@@ -31,14 +27,14 @@ const Home = () => {
           <div className="col-4 text-center">
             <i className="fas fa-question display-3" />
             <h2 className="mt-2">Realistic</h2>
-            <p>Real life in-game decisions</p>
+            <p>In-game decisions mimic real life</p>
           </div>
           <div className="col-4 text-center">
             <i className="fas fa-plus display-3" />
             <h2 className="mt-2">Modern</h2>
             <p>
-              Being a progressive web app, the game game be played by children
-              even in remote areas
+              Being a progressive web app, the game can be played by children in
+              remote areas
             </p>
           </div>
         </div>
