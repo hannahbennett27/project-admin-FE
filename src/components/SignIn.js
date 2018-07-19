@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Redirect, Link } from "react-router-dom";
 import { auth } from "../firebase";
+import loginlogo from "../images/login.png";
 
 class SignIn extends Component {
   state = {
@@ -63,7 +64,8 @@ class SignIn extends Component {
             <div className="col col-lg-2" />
             <div className="col-md-auto text-center">
               {this.renderRedirect()}
-              <i className="fas fa-user text-secondary" />
+              {/* <i className="fas fa-user text-secondary" /> */}
+              <img src={loginlogo} className="loginlogo" />
               <br />
               <h5 className="text-secondary">Sign In</h5>
               {signInForm}

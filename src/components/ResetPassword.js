@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Redirect, Link } from "react-router-dom";
 import { auth } from "../firebase";
+import loginlogo from "../images/login.png";
 
 class ResetPassword extends Component {
   state = {
@@ -50,6 +51,7 @@ class ResetPassword extends Component {
             <div className="col col-lg-2" />
             <div className="col-md-auto text-center">
               {this.renderRedirect()}
+              <img src={loginlogo} className="loginlogo" />
               <p className="text-secondary">Reset Password</p>
               {resetPasswordForm}
               {error && <p>{error.message}</p>}

@@ -20,7 +20,6 @@ const userAcc = (
   <div className="container-fluid bg-white">
     <div className="sidenav border-right bg-light">
       <ul className="list-unstyled">
-        <li className="mb-2 mt-2 text-secondary">Account Page</li>
         <li className="mb-2">
           <Link to={"/changepassword"}>
             <span className="text-secondary">
@@ -41,16 +40,16 @@ const userAcc = (
     </div>
     <Header />
     <div className="container">
-      <div className="row mt-5">
-        <div className="col-5 jumbotron mt-5 bg-light">
+      <div className="row">
+        <div className="col-5 jumbotron bg-light">
           <NewGame />
         </div>
-        <div className="col-5 mt-5 jumbotron bg-light">
+        <div className="col-5 jumbotron bg-light">
           <PolarChartComplete />
         </div>
       </div>
     </div>
-    <div className="container mt-5">
+    <div className="container">
       <div>
         <Games />
       </div>
