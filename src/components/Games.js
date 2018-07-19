@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import { dbgames } from "../firebase";
-import { Link, Redirect } from "react-router-dom";
-import AuthUserContext from "./AuthUserContext";
+import React, { Component } from 'react';
+import { dbgames } from '../firebase';
+import { Link, Redirect } from 'react-router-dom';
+import AuthUserContext from './AuthUserContext';
 
 class Games extends Component {
   state = {
@@ -18,7 +18,7 @@ class Games extends Component {
         this.setState({ games, loaded: true });
       })
       .catch(err => {
-        this.props.history.push("/404");
+        this.props.history.push('/404');
         this.setState({
           invalidUrl: true
         });
