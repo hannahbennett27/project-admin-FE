@@ -31,7 +31,7 @@ class GameAnalytics extends Component {
         <div className="sidenav border-right bg-light">
           <ul className="list-unstyled">
             <li className="mb-2 mt-2 text-secondary">
-              {this.props.user.schoolName}{" "}
+              <h3>{this.props.user.schoolName} </h3>
             </li>
             <li className="mb-2 text-secondary">
               <Link to={"/account"}>
@@ -58,8 +58,8 @@ class GameAnalytics extends Component {
             </li>
           </ul>
         </div>
-        <h2 className="display-4 text-center">{sessionName}</h2>
-        <h6 className="text-center">
+        <h2 className="display-4 text-center brandicon">{sessionName}</h2>
+        <h6 className="text-center text-secondary">
           Please ask players to enter <strong>{gameId}</strong> (case sensitive)
           to log into this session
         </h6>

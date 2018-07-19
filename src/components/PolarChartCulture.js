@@ -21,12 +21,12 @@ class PolarChartCulture extends Component {
 
     return (
       <div className="jumbotron bg-light">
-        <h1>Social Decisions</h1>
-        <p className="text-center">Class Total</p>
+        <h1 className="text-secondary">Social Decisions</h1>
+        <p className="text-center text-secondary">Class Total</p>
         <Polar data={totals} />
         <div className="text-center">
           <div className="btn-group btn-group-toggle mt-4">
-            <label className="btn btn-light">
+            <label className="btn btn-light text-secondary">
               <input
                 defaultChecked
                 type="radio"
@@ -35,10 +35,10 @@ class PolarChartCulture extends Component {
                 autoComplete="off"
                 onClick={this.handleClick}
                 value="cardDecision"
-              />{' '}
+              />{" "}
               Card
             </label>
-            <label className="btn btn-light">
+            <label className="btn btn-light text-secondary">
               <input
                 defaultChecked
                 type="radio"
@@ -47,10 +47,10 @@ class PolarChartCulture extends Component {
                 autoComplete="off"
                 onClick={this.handleClick}
                 value="careerProgressionDecision"
-              />{' '}
+              />{" "}
               Career Progression
             </label>
-            <label className="btn btn-light">
+            <label className="btn btn-light text-secondary">
               <input
                 defaultChecked
                 type="radio"
@@ -59,10 +59,10 @@ class PolarChartCulture extends Component {
                 autoComplete="off"
                 onClick={this.handleClick}
                 value="clothingDecision"
-              />{' '}
+              />{" "}
               Clothing
             </label>
-            <label className="btn btn-light">
+            <label className="btn btn-light text-secondary">
               <input
                 defaultChecked
                 type="radio"
@@ -71,10 +71,10 @@ class PolarChartCulture extends Component {
                 autoComplete="off"
                 onClick={this.handleClick}
                 value="nightDecision"
-              />{' '}
+              />{" "}
               Night
             </label>
-            <label className="btn btn-light">
+            <label className="btn btn-light text-secondary">
               <input
                 defaultChecked
                 type="radio"
@@ -83,7 +83,7 @@ class PolarChartCulture extends Component {
                 autoComplete="off"
                 onClick={this.handleClick}
                 value="phoneDecision"
-              />{' '}
+              />{" "}
               Phone
             </label>
           </div>

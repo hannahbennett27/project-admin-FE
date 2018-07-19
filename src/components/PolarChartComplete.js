@@ -8,7 +8,7 @@ const PolarChartComplete = ({ playersData }) => {
 
     return (
       <div className="mb-4">
-        <h1 className="text-center">Game Completed</h1>
+        <h1 className="text-center text-secondary">Game Completed</h1>
         <p className="text-center">Class Total</p>
         <Polar data={total} />
       </div>
@@ -18,7 +18,7 @@ const PolarChartComplete = ({ playersData }) => {
 
     return (
       <div>
-        <h3 className="text-center">Completed Games</h3>
+        <h3 className="text-center text-secondary">Completed Games</h3>
         <Pie data={total} />
       </div>
     );

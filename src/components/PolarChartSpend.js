@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
-import { Polar } from 'react-chartjs-2';
-import Select from 'react-select';
-import 'react-select/dist/react-select.css';
-import * as spendPolarData from '../dataAnalysis/generateSpendPolarData';
+import React, { Component } from "react";
+import { Polar } from "react-chartjs-2";
+import Select from "react-select";
+import "react-select/dist/react-select.css";
+import * as spendPolarData from "../dataAnalysis/generateSpendPolarData";
 
 class PolarChartSpend extends Component {
   state = {
-    selectedStudent: 'Class Average'
+    selectedStudent: "Class Average"
   };
 
   render() {
@@ -19,11 +19,11 @@ class PolarChartSpend extends Component {
       selectedStudent
     );
 
-    players.unshift('Class Average');
+    players.unshift("Class Average");
 
     return (
       <div className="jumbotron bg-light">
-        <h1>Payment Decisions</h1>
+        <h1 className="text-secondary">Payment Decisions</h1>
         <Polar data={total} />
         <Select
           className="student-select mx-auto"
@@ -40,7 +40,7 @@ class PolarChartSpend extends Component {
 
   handleChange = selectedStudent => {
     if (selectedStudent === null) {
-      this.setState({ selectedStudent: 'Class Average' });
+      this.setState({ selectedStudent: "Class Average" });
     } else {
       this.setState({ selectedStudent: selectedStudent.label });
     }

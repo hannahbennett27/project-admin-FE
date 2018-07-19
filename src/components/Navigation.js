@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import AuthUserContext from "./AuthUserContext";
 import SignOut from "./SignOut";
-import logo from "../images/logo.png";
+import logo from "../images/credit-wise-logo-final.png";
 
 const Navigation = () => {
   return (

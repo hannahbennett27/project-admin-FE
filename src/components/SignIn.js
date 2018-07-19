@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Redirect, Link } from "react-router-dom";
 import { auth } from "../firebase";
+import loginlogo from "../images/login.png";
 
 class SignIn extends Component {
   state = {
@@ -41,7 +42,7 @@ class SignIn extends Component {
           value={password}
           onChange={this.handleChange}
         />
-        <p>
+        <p className="text-secondary">
           Forgotten your password? <Link to={"/resetpassword"}>Reset</Link>
         </p>
         <button
@@ -63,12 +64,13 @@ class SignIn extends Component {
             <div className="col col-lg-2" />
             <div className="col-md-auto text-center">
               {this.renderRedirect()}
-              <i className="fas fa-user" />
+              {/* <i className="fas fa-user text-secondary" /> */}
+              <img src={loginlogo} className="loginlogo" />
               <br />
-              <h5>Sign In</h5>
+              <h5 className="text-secondary">Sign In</h5>
               {signInForm}
               {error && <p>{error.message}</p>}
-              <p>
+              <p className="text-secondary">
                 Don't have an account? <Link to={"/signup"}>Sign Up</Link>
               </p>
             </div>

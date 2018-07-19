@@ -30,8 +30,10 @@ class Games extends Component {
       <Redirect to="/404" />
     ) : this.state.loaded && this.state.games ? (
       <div>
-        <h2 className=" text-center mt-4">Previous Game Sessions</h2>
-        <table className="table table-striped">
+        <h2 className=" text-center mt-4 text-secondary">
+          Previous Game Sessions
+        </h2>
+        <table className="table table-striped text-secondary">
           <thead>
             <tr>
               <th scope="col">#</th>

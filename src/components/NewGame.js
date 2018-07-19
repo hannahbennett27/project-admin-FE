@@ -35,7 +35,7 @@ class NewGame extends Component {
           user ? (
             <div>
               {this.renderRedirect()}
-              <h3 className="text-center">New Game Session</h3>
+              <h3 className="text-center text-secondary">New Game Session</h3>
 
               <input
                 className="form-control w-50 mt-4 pl-4 mx-auto"
@@ -58,7 +58,7 @@ class NewGame extends Component {
               />
               <br />
               <button
-                className="btn btn-outline-success float-right"
+                className="btn btn-outline-primary float-right"
                 type="submit"
                 value="Submit"
                 disabled={inputInvalid}
