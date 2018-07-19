@@ -20,9 +20,7 @@ const userAcc = (
   <div className="container-fluid bg-white">
     <div className="sidenav">
       <ul className="list-unstyled">
-        <li className="mb-4 mt-2">
-          <h2>Account Page</h2>
-        </li>
+        <li className="mb-2 mt-2 text-secondary">Account Page</li>
         <li className="mb-2">
           <Link to={"/changepassword"}>
             <span className="text-secondary">

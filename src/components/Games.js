@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import { dbgames } from '../firebase';
-import { Link, Redirect } from 'react-router-dom';
-import AuthUserContext from './AuthUserContext';
+import React, { Component } from "react";
+import { dbgames } from "../firebase";
+import { Link, Redirect } from "react-router-dom";
+import AuthUserContext from "./AuthUserContext";
 
 class Games extends Component {
   state = {
@@ -18,7 +18,7 @@ class Games extends Component {
         this.setState({ games, loaded: true });
       })
       .catch(err => {
-        this.props.history.push('/404');
+        this.props.history.push("/404");
         this.setState({
           invalidUrl: true
         });
@@ -30,7 +30,7 @@ class Games extends Component {
       <Redirect to="/404" />
     ) : this.state.loaded && this.state.games ? (
       <div>
-        <h3 className="display-4 text-center mt-4">Previous Game Sessions</h3>
+        <h2 className=" text-center mt-4">Previous Game Sessions</h2>
         <table className="table table-striped">
           <thead>
             <tr>
@@ -49,7 +49,10 @@ class Games extends Component {
                   <td>{game.sessionName}</td>
                   <td>{game.schoolYear} </td>
                   <td>
-                    <Link to={`/account/games/${game.gameId}`}>
+                    <Link
+                      className="text-secondary"
+                      to={`/account/games/${game.gameId}`}
+                    >
                       {game.gameId}
                     </Link>
                   </td>

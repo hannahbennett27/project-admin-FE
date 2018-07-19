@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
-import { Polar } from 'react-chartjs-2';
-import 'react-select/dist/react-select.css';
-import * as culturePolarData from '../dataAnalysis/generateCulturePolarData';
+import React, { Component } from "react";
+import { Polar } from "react-chartjs-2";
+import "react-select/dist/react-select.css";
+import * as culturePolarData from "../dataAnalysis/generateCulturePolarData";
 
 class PolarChartCulture extends Component {
   state = {
-    selectedChoice: 'cardDecision'
+    selectedChoice: "cardDecision"
   };
 
   render() {
@@ -21,7 +21,7 @@ class PolarChartCulture extends Component {
 
     return (
       <div className="jumbotron bg-light">
-        <h1>Social Decisions</h1>
+        <h1 className="text-center">Social Decisions</h1>
         <Polar data={totals} />
         <div className="btn-group btn-group-toggle mt-4">
           <label className="btn btn-light">
@@ -33,7 +33,7 @@ class PolarChartCulture extends Component {
               autoComplete="off"
               onClick={this.handleClick}
               value="cardDecision"
-            />{' '}
+            />{" "}
             Card
           </label>
           <label className="btn btn-light">
@@ -45,7 +45,7 @@ class PolarChartCulture extends Component {
               autoComplete="off"
               onClick={this.handleClick}
               value="careerProgressionDecision"
-            />{' '}
+            />{" "}
             Career Progression
           </label>
           <label className="btn btn-light">
@@ -57,7 +57,7 @@ class PolarChartCulture extends Component {
               autoComplete="off"
               onClick={this.handleClick}
               value="clothingDecision"
-            />{' '}
+            />{" "}
             Clothing
           </label>
           <label className="btn btn-light">
@@ -69,7 +69,7 @@ class PolarChartCulture extends Component {
               autoComplete="off"
               onClick={this.handleClick}
               value="nightDecision"
-            />{' '}
+            />{" "}
             Night
           </label>
           <label className="btn btn-light">
@@ -81,7 +81,7 @@ class PolarChartCulture extends Component {
               autoComplete="off"
               onClick={this.handleClick}
               value="phoneDecision"
-            />{' '}
+            />{" "}
             Phone
           </label>
         </div>
