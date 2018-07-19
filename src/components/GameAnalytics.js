@@ -1,61 +1,53 @@
-import React, { Component } from 'react';
-import { db } from '../firebase/firebase';
-// import { dbgames } from "../firebase";
-import AuthUserContext from './AuthUserContext';
-import { Link, Redirect } from 'react-router-dom';
-import LineChart from './LineChart';
-import PolarChartCulture from './PolarChartCulture';
-import PolarChartComplete from './PolarChartComplete';
+import React, { Component } from "react";
+import { db } from "../firebase/firebase";
+import AuthUserContext from "./AuthUserContext";
+import { Link, Redirect } from "react-router-dom";
+import LineChart from "./LineChart";
+import PolarChartCulture from "./PolarChartCulture";
+import PolarChartComplete from "./PolarChartComplete";
 
 class GameAnalytics extends Component {
   state = {
     game: {},
-    loaded: false,
-    invalidURL: false
+    loaded: false
   };
 
   componentDidMount() {
     const { gameId } = this.props.match.params;
-    db.collection('games')
+    db.collection("games")
       .doc(gameId)
       .onSnapshot(docSnapshot => {
-        this.setState({ game: docSnapshot.data(), loaded: true });
+        this.setState({ game: docSnapshot.data() });
       });
-    // dbgames.getSingleGame(gameId).then(([game]) => {
-    //   console.log(game);
-    // this.setState({ game });
-    // });
   }
 
   render() {
     const { players: playersData, sessionName } = this.state.game;
     const { gameId } = this.props.match.params;
 
-    return this.state.invalidUrl ? (
-      <Redirect to="/404" />
-    ) : this.state.loaded && this.props.user ? (
+    return this.props.user && playersData ? (
       <div className="container-fluid bg-white">
         <div className="row">
           <div className="col-2 border-right bg-light">
             <ul className="list-unstyled">
               <li className="mb-2 mt-2">{this.props.user.schoolName} </li>
               <li className="mb-2 text-secondary">
-                <Link to={'/account'}>
+                <Link to={"/account"}>
                   <span className="text-secondary">Account Summary</span>
                 </Link>
               </li>
               <li className="mb-2 ">
-                <Link to={'/changepassword'}>
+                <Link to={"/changepassword"}>
                   <span className="text-secondary">
-                    {' '}
+                    {" "}
                     <i className="fas fa-user-circle" /> Update Account
                   </span>
                 </Link>
               </li>
               <li className="mb-2 text-secondary">
-                <Link to={'/account/games'}>
+                <Link to={"/account/games"}>
                   <span className="text-secondary">
-                    {' '}
+                    {" "}
                     <i className="fas fa-gamepad" /> Saved games
                   </span>
                 </Link>
@@ -66,7 +58,7 @@ class GameAnalytics extends Component {
             <h2 className="display-4 text-center">{sessionName}</h2>
             <h6 className="text-center">
               Please have players enter <strong>{gameId}</strong> (case
-              sensitive) to log into this session{' '}
+              sensitive) to log into this session{" "}
             </h6>
             {this.props.user && (
               <div>
@@ -94,6 +86,11 @@ class GameAnalytics extends Component {
       <div id="loader" />
     );
   }
+
+  handleClick = () => {
+    console.log("hello");
+    this.setState({ classAverage: true });
+  };
 }
 
 export default props => {
