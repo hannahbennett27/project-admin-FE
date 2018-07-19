@@ -36,7 +36,7 @@ const userAcc = (
             <Link to={'/account/games'}>
               <span className="text-secondary">
                 {' '}
-                <i className="fas fa-gamepad" /> Saved games
+                <i className="fas fa-gamepad" /> Saved Games
               </span>
             </Link>
           </li>

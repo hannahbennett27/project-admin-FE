@@ -1,4 +1,5 @@
-export const generateTotal = (playersData, players) => {
+export const generateTotal = playersData => {
+  const players = Object.keys(playersData);
   const completeData = [0, 0];
 
   players.forEach(player => {
