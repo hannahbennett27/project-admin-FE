@@ -6,9 +6,7 @@ import * as lineChartData from '../dataAnalysis/generateLineChartData';
 
 class LineChart extends Component {
   state = {
-
     selectedStudent: 'Class Average'
-
   };
 
   render() {
@@ -64,6 +62,7 @@ class LineChart extends Component {
           options={players.map(player => {
             return { value: player, label: player };
           })}
+        />
       </div>
     );
   }
