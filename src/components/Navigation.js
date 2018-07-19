@@ -19,6 +19,13 @@ const userNav = (
     </Link>
     <div className="collapse navbar-collapse" id="navbarSupportedContent" />
     <ul className="navbar-nav navbar-right">
+      <li className="nav-item">
+        <Link className="text-secondary" to={"/account"}>
+          <p>
+            Account <i class="fas fa-home" />
+          </p>
+        </Link>
+      </li>
       <ul className="navbar-nav mr-auto">
         <SignOut />
       </ul>
