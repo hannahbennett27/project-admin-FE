@@ -1,0 +1,102 @@
+/* Center the loader */
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border: 16px solid #00a6be;
+  border-radius: 50%;
+  border-top: 16px solid #ffb52f;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.logo {
+  height: 3rem;
+  width: 8rem;
+  margin-left: 0.5em;
+}
+
+.loginlogo {
+  height: 3rem;
+  width: 3rem;
+}
+
+.student-select {
+  width: 25%;
+}
+
+.jumbotron {
+  margin: 2.5rem;
+}
+
+.student-select {
+  margin-top: 10px;
+}
+
+h1 {
+  text-align: center;
+}
+
+/* .sidenav {
+  width: 130px;
+  position: fixed;
+  z-index: 1;
+  top: 20px;
+  left: 10px;
+  overflow-x: hidden;
+  padding: 8px 0;
+} */
+
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  overflow-x: hidden;
+  padding-top: 100px;
+}
+
+.sidenav li {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 15px;
+  color: #818181;
+  display: block;
+}
+
+/* homepage */
+
+.brandfont {
+  color: #ffb52f;
+}
+
+.brandicon {
+  color: #00a6be;
+}
