@@ -44,7 +44,7 @@ export const generateTotals = (playersData, players, choice) => {
     datasets: [
       {
         data: lookUp[choice].data,
-        backgroundColor: ['red', 'yellow', 'blue', 'green']
+        backgroundColor: ['#e60024', '#e6a339', '#4654c3', 'green']
       }
     ],
     labels: lookUp[choice].labels

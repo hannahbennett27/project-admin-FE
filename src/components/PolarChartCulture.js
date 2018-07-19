@@ -11,7 +11,7 @@ class PolarChartCulture extends Component {
   render() {
     const { playersData } = this.props;
     const players = Object.keys(playersData);
-    const choices = Object.keys(playersData[players[0]].decisions);
+    // const choices =
     const { selectedChoice } = this.state;
 
     const totals = culturePolarData.generateTotals(
@@ -24,7 +24,6 @@ class PolarChartCulture extends Component {
       <div className="jumbotron bg-light">
         <h1>Cultural Decisions</h1>
         <Polar data={totals} />
-
         <div class="btn-group btn-group-toggle mt-4">
           <label class="btn btn-light">
             <input
