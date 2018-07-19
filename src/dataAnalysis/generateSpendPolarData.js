@@ -3,7 +3,7 @@ export const generateTotal = (playersData, players, selectedStudent) => {
   const indexLookUp = { cashSpends: 0, creditSpends: 1, billPostpones: 2 };
   const keys = Object.keys(indexLookUp);
 
-  if (selectedStudent === 'Class Average') {
+  if (selectedStudent === "Class Average") {
     players.forEach(player => {
       keys.forEach(key => {
         completeData[indexLookUp[key]] += playersData[player][key];
@@ -14,10 +14,10 @@ export const generateTotal = (playersData, players, selectedStudent) => {
       datasets: [
         {
           data: completeData,
-          backgroundColor: ['#e60024', '#e6a339', '#4654c3']
+          backgroundColor: ["#00a6be", "#ffb52f", "#686868"]
         }
       ],
-      labels: ['Cash Payments', 'Credit Payments', 'Bill Postpones']
+      labels: ["Cash Payments", "Credit Payments", "Bill Postpones"]
     };
     return total;
   } else {
@@ -28,10 +28,10 @@ export const generateTotal = (playersData, players, selectedStudent) => {
       datasets: [
         {
           data: completeData,
-          backgroundColor: ['#e60024', '#e6a339', '#4654c3']
+          backgroundColor: ["#00a6be", "#ffb52f", "#686868"]
         }
       ],
-      labels: ['Cash Payments', 'Credit Payments', 'Bill Postpones']
+      labels: ["Cash Payments", "Credit Payments", "Bill Postpones"]
     };
     return total;
   }

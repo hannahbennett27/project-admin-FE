@@ -9,13 +9,8 @@ export const generateTotal = playersData => {
   });
 
   const total = {
-    datasets: [
-      {
-        data: completeData,
-        backgroundColor: ['#e60024', '#e6a339']
-      }
-    ],
-    labels: ['Win', 'Lose']
+    datasets: [{ data: completeData, backgroundColor: ["#ffb52f", "#00a6be"] }],
+    labels: ["Win", "Lose"]
   };
 
   return total;
@@ -23,13 +18,8 @@ export const generateTotal = playersData => {
 
 export const generateOverallTotal = () => {
   const total = {
-    datasets: [
-      {
-        data: [10, 20],
-        backgroundColor: ['#e60024', '#e6a339']
-      }
-    ],
-    labels: ['Win', 'Lose']
+    datasets: [{ data: [10, 20], backgroundColor: ["#ffb52f", "#00a6be"] }],
+    labels: ["Win", "Lose"]
   };
 
   return total;
