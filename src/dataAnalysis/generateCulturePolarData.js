@@ -1,16 +1,16 @@
 export const generateTotals = (playersData, players, choice) => {
   const lookUp = {
-    card: {
+    cardDecision: {
       data: [0, 0, 0, 0],
       labels: ['Low APR', 'Medium APR', 'High APR', 'Choice Pending'],
       dataIndex: { low: 0, med: 1, high: 2, null: 3 }
     },
-    careerProgression: {
+    careerProgressionDecision: {
       data: [0, 0],
       labels: ['Career Progression', 'Holiday'],
       dataIndex: { true: 0, false: 1 }
     },
-    clothing: {
+    clothingDecision: {
       data: [0, 0, 0, 0],
       labels: ['Current', 'Casual', 'Smart Casual', 'Party'],
       dataIndex: {
@@ -20,12 +20,12 @@ export const generateTotals = (playersData, players, choice) => {
         partyClothing: 3
       }
     },
-    night: {
+    nightDecision: {
       data: [0, 0, 0, 0],
       labels: ['Night In', 'Online Shopping', 'Eat Out', 'Cinema'],
       dataIndex: { nightIn: 0, onlineShopping: 1, eatOut: 2, movies: 3 }
     },
-    phone: {
+    phoneDecision: {
       data: [0, 0, 0],
       labels: ['Second Hand', 'Sim Only', 'High Contract'],
       dataIndex: { secondHand: 0, simOnly: 1, highContract: 2 }
@@ -33,9 +33,9 @@ export const generateTotals = (playersData, players, choice) => {
   };
 
   players.forEach(player => {
-    const decision = playersData[player].decisions[choice];
+    const decision = playersData[player][choice];
     const lookUpRef = lookUp[choice];
-    choice === 'card' || !lookUpRef.data[lookUpRef.dataIndex[decision]]
+    choice === 'cardDecision' || !lookUpRef.data[lookUpRef.dataIndex[decision]]
       ? ++lookUpRef.data[lookUpRef.dataIndex[decision]]
       : null;
   });

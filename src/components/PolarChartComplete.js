@@ -9,6 +9,7 @@ const PolarChartComplete = ({ playersData }) => {
 
     return (
       <div className="mb-4">
+        <h1>Game Completed</h1>
         <Polar data={total} />
       </div>
     );
