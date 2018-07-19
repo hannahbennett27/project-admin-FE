@@ -5,7 +5,12 @@ import { auth } from "../firebase";
 const SignOut = () => {
   return (
     <Link className="text-secondary" to={"/"}>
-      <p type="submit" value="Sign Out" onClick={handleSignOut}>
+      <p
+        className="ml-2"
+        type="submit"
+        value="Sign Out"
+        onClick={handleSignOut}
+      >
         Sign Out <i class="fas fa-sign-out-alt" />
       </p>{" "}
     </Link>
