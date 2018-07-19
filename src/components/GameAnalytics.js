@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { db } from "../firebase/firebase";
 import AuthUserContext from "./AuthUserContext";
-import { Link, Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 import LineChart from "./LineChart";
 import PolarChartCulture from "./PolarChartCulture";
 import PolarChartComplete from "./PolarChartComplete";
