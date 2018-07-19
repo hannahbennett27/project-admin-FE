@@ -1,11 +1,11 @@
-
-import React, { Component } from "react";
-import { db } from "../firebase/firebase";
-import AuthUserContext from "./AuthUserContext";
-import { Link } from "react-router-dom";
-import LineChart from "./LineChart";
-import PolarChartCulture from "./PolarChartCulture";
-import PolarChartComplete from "./PolarChartComplete";
+import React, { Component } from 'react';
+import { db } from '../firebase/firebase';
+import AuthUserContext from './AuthUserContext';
+import { Link } from 'react-router-dom';
+import LineChart from './LineChart';
+import PolarChartCulture from './PolarChartCulture';
+import PolarChartComplete from './PolarChartComplete';
+import PolarChartSpend from './PolarChartSpend';
 
 class GameAnalytics extends Component {
   state = {
@@ -58,7 +58,7 @@ class GameAnalytics extends Component {
           <div className="col-10">
             <h2 className="display-4 text-center">{sessionName}</h2>
             <h6 className="text-center">
-              Please have players enter <strong>{gameId}</strong> (case
+              Please ask players to enter <strong>{gameId}</strong> (case
               sensitive) to log into this session{' '}
             </h6>
             {this.props.user && (
@@ -67,6 +67,11 @@ class GameAnalytics extends Component {
                   <LineChart playersData={playersData} />
                 </div>
                 <div className="container">
+                  <div className="row">
+                    <div className="col-10 mt-5 mx-auto">
+                      <PolarChartSpend playersData={playersData} />
+                    </div>
+                  </div>
                   <div className="row">
                     <div className="col-10 mt-5 mx-auto">
                       <PolarChartCulture playersData={playersData} />
