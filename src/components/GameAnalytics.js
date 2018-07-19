@@ -1,10 +1,11 @@
-import React, { Component } from 'react';
-import { db } from '../firebase/firebase';
-import AuthUserContext from './AuthUserContext';
-import { Link } from 'react-router-dom';
-import LineChart from './LineChart';
-import PolarChartCulture from './PolarChartCulture';
-import PolarChartComplete from './PolarChartComplete';
+
+import React, { Component } from "react";
+import { db } from "../firebase/firebase";
+import AuthUserContext from "./AuthUserContext";
+import { Link } from "react-router-dom";
+import LineChart from "./LineChart";
+import PolarChartCulture from "./PolarChartCulture";
+import PolarChartComplete from "./PolarChartComplete";
 
 class GameAnalytics extends Component {
   state = {
