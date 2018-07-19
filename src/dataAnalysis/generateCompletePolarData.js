@@ -11,7 +11,7 @@ export const generateTotal = (playersData, players) => {
     datasets: [
       {
         data: completeData,
-        backgroundColor: ['red', 'yellow']
+        backgroundColor: ['#e60024', '#e6a339']
       }
     ],
     labels: ['Win', 'Lose']
@@ -25,7 +25,7 @@ export const generateOverallTotal = () => {
     datasets: [
       {
         data: [10, 20],
-        backgroundColor: ['red', 'yellow']
+        backgroundColor: ['#e60024', '#e6a339']
       }
     ],
     labels: ['Win', 'Lose']

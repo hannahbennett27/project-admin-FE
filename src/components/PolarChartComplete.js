@@ -1,6 +1,6 @@
-import React from "react";
-import { Pie, Polar } from "react-chartjs-2";
-import * as completePolarData from "../dataAnalysis/generateCompletePolarData";
+import React from 'react';
+import { Pie, Polar } from 'react-chartjs-2';
+import * as completePolarData from '../dataAnalysis/generateCompletePolarData';
 
 const PolarChartComplete = ({ playersData }) => {
   if (playersData) {
@@ -16,7 +16,8 @@ const PolarChartComplete = ({ playersData }) => {
     let total = completePolarData.generateOverallTotal();
 
     return (
-      <div className="mb-4 mt-5 jumbotron bg-light">
+      <div>
+        <h3 className="text-center">Completed Malarkey</h3>
         <Pie data={total} />
       </div>
     );

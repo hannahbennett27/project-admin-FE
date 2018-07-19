@@ -12,7 +12,7 @@ class PolarChartCulture extends Component {
   render() {
     const { playersData } = this.props;
     const players = Object.keys(playersData);
-    const choices = Object.keys(playersData[players[0]].decisions);
+    // const choices =
     const { selectedChoice } = this.state;
 
     const totals = culturePolarData.generateTotals(
@@ -26,15 +26,17 @@ class PolarChartCulture extends Component {
         <h1>Cultural Decisions</h1>
         <Polar data={totals} />
         <div className="mb-5">
-          <Select
-            className="student-select mx-auto"
-            name="culture-filter"
-            value={this.state.selectedChoice}
-            onChange={this.handleChange}
-            options={choices.map(choice => {
-              return { value: choice, label: choice };
-            })}
-          />
+          {choices ? (
+            <Select
+              className="student-select mx-auto"
+              name="culture-filter"
+              value={this.state.selectedChoice}
+              onChange={this.handleChange}
+              options={choices.map(choice => {
+                return { value: choice, label: choice };
+              })}
+            />
+          ) : null}
         </div>
       </div>
     );

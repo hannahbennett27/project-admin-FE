@@ -28,21 +28,21 @@ class LineChart extends Component {
       datasets: [
         {
           label: 'Credit Rating',
-          borderColor: 'red',
+          borderColor: '#e60024',
           fill: false,
           lineTension: 0,
           data: dataLookUp.rating
         },
         {
           label: 'Credit Available',
-          borderColor: 'blue',
+          borderColor: '#e6a339',
           fill: false,
           lineTension: 0,
           data: dataLookUp.creditAvail
         },
         {
           label: 'Cash Available',
-          borderColor: 'purple',
+          borderColor: '#4654c3',
           fill: false,
           lineTension: 0,
           data: dataLookUp.cashAvail
