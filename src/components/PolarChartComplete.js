@@ -1,6 +1,6 @@
-import React from 'react';
-import { Pie, Polar } from 'react-chartjs-2';
-import * as completePolarData from '../dataAnalysis/generateCompletePolarData';
+import React from "react";
+import { Pie, Polar } from "react-chartjs-2";
+import * as completePolarData from "../dataAnalysis/generateCompletePolarData";
 
 const PolarChartComplete = ({ playersData }) => {
   if (playersData) {
@@ -8,7 +8,7 @@ const PolarChartComplete = ({ playersData }) => {
 
     return (
       <div className="mb-4">
-        <h1>Game Completed</h1>
+        <h1 className="text-center">Game Completed</h1>
         <p className="text-center">Class Total</p>
         <Polar data={total} />
       </div>

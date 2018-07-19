@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
-import { Polar } from 'react-chartjs-2';
-import 'react-select/dist/react-select.css';
-import * as culturePolarData from '../dataAnalysis/generateCulturePolarData';
+import React, { Component } from "react";
+import { Polar } from "react-chartjs-2";
+import "react-select/dist/react-select.css";
+import * as culturePolarData from "../dataAnalysis/generateCulturePolarData";
 
 class PolarChartCulture extends Component {
   state = {
-    selectedChoice: 'cardDecision'
+    selectedChoice: "cardDecision"
   };
 
   render() {

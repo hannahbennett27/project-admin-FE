@@ -35,9 +35,9 @@
 }
 
 .logo {
-  height: 6rem;
-  width: 6rem;
-  margin-left: 2em;
+  height: 3rem;
+  width: 3rem;
+  margin-left: 0.5em;
 }
 
 .student-select {
@@ -64,17 +64,17 @@ h1 {
   overflow-x: hidden;
   padding: 8px 0;
 } */
-
+  
 .sidenav {
   height: 100%;
-  width: 160px;
+  width: 200px;
   position: fixed;
   z-index: 1;
   top: 0;
   left: 0;
   background-color: #fff;
   overflow-x: hidden;
-  padding-top: 20px;
+  padding-top: 100px;
 }
 
 .sidenav li {
@@ -83,8 +83,4 @@ h1 {
   font-size: 15px;
   color: #818181;
   display: block;
-}
-
-.sidenav li:hover {
-  color: #f1f1f1;
 }
