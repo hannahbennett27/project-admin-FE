@@ -4,12 +4,12 @@ import * as completePolarData from "../dataAnalysis/generateCompletePolarData";
 
 const PolarChartComplete = ({ playersData }) => {
   if (playersData) {
-    const players = Object.keys(playersData);
-    let total = completePolarData.generateTotal(playersData, players);
+    let total = completePolarData.generateTotal(playersData);
 
     return (
       <div className="mb-4">
         <h1 className="text-center">Game Completed</h1>
+        <p className="text-center">Class Total</p>
         <Polar data={total} />
       </div>
     );
@@ -18,7 +18,7 @@ const PolarChartComplete = ({ playersData }) => {
 
     return (
       <div>
-        <h3 className="text-center">Completed Malarkey</h3>
+        <h3 className="text-center">Completed Games</h3>
         <Pie data={total} />
       </div>
     );

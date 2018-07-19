@@ -52,7 +52,7 @@ class LineChart extends Component {
 
     return (
       <div className="jumbotron bg-light">
-        <h1 className="text-center">Class Average</h1>
+        <h1 className="text-center">Game Progress</h1>
         <Line data={lineData} />
         <Select
           className="student-select mx-auto"

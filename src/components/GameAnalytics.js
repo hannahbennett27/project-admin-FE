@@ -1,10 +1,11 @@
-import React, { Component } from "react";
-import { db } from "../firebase/firebase";
-import AuthUserContext from "./AuthUserContext";
-import { Link } from "react-router-dom";
-import LineChart from "./LineChart";
-import PolarChartCulture from "./PolarChartCulture";
-import PolarChartComplete from "./PolarChartComplete";
+import React, { Component } from 'react';
+import { db } from '../firebase/firebase';
+import AuthUserContext from './AuthUserContext';
+import { Link } from 'react-router-dom';
+import LineChart from './LineChart';
+import PolarChartCulture from './PolarChartCulture';
+import PolarChartComplete from './PolarChartComplete';
+import PolarChartSpend from './PolarChartSpend';
 
 class GameAnalytics extends Component {
   state = {
@@ -76,7 +77,7 @@ class GameAnalytics extends Component {
               <div className="row">
                 <div className="col-10 mt-5 mx-auto jumbotron bg-light">
                   <PolarChartComplete playersData={playersData} />
-                </div>
+                    </div>
               </div>
             </div>
           </div>
