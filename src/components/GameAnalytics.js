@@ -58,8 +58,8 @@ class GameAnalytics extends Component {
             </li>
           </ul>
         </div>
-        <h2 className="display-4 text-center">{sessionName}</h2>
-        <h6 className="text-center">
+        <h2 className="display-4 text-center brandicon">{sessionName}</h2>
+        <h6 className="text-center text-secondary">
           Please ask players to enter <strong>{gameId}</strong> (case sensitive)
           to log into this session
         </h6>

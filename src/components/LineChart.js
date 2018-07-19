@@ -28,21 +28,21 @@ class LineChart extends Component {
       datasets: [
         {
           label: "Credit Rating",
-          borderColor: "#e60024",
+          borderColor: "#00a6be",
           fill: false,
           lineTension: 0,
           data: dataLookUp.rating
         },
         {
           label: "Credit Available",
-          borderColor: "#e6a339",
+          borderColor: "#ffb52f",
           fill: false,
           lineTension: 0,
           data: dataLookUp.creditAvail
         },
         {
           label: "Cash Available",
-          borderColor: "#4654c3",
+          borderColor: "#686868",
           fill: false,
           lineTension: 0,
           data: dataLookUp.cashAvail
@@ -52,7 +52,7 @@ class LineChart extends Component {
 
     return (
       <div className="jumbotron bg-light">
-        <h1 className="text-center">Game Progress</h1>
+        <h1 className="text-center text-secondary">Game Progress</h1>
         <Line data={lineData} />
         <Select
           className="student-select mx-auto"

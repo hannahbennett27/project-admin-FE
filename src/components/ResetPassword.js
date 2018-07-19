@@ -50,7 +50,7 @@ class ResetPassword extends Component {
             <div className="col col-lg-2" />
             <div className="col-md-auto text-center">
               {this.renderRedirect()}
-              <p>Reset Password</p>
+              <p className="text-secondary">Reset Password</p>
               {resetPasswordForm}
               {error && <p>{error.message}</p>}
               <p>

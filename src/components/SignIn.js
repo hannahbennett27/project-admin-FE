@@ -41,7 +41,7 @@ class SignIn extends Component {
           value={password}
           onChange={this.handleChange}
         />
-        <p>
+        <p className="text-secondary">
           Forgotten your password? <Link to={"/resetpassword"}>Reset</Link>
         </p>
         <button
@@ -63,12 +63,12 @@ class SignIn extends Component {
             <div className="col col-lg-2" />
             <div className="col-md-auto text-center">
               {this.renderRedirect()}
-              <i className="fas fa-user" />
+              <i className="fas fa-user text-secondary" />
               <br />
-              <h5>Sign In</h5>
+              <h5 className="text-secondary">Sign In</h5>
               {signInForm}
               {error && <p>{error.message}</p>}
-              <p>
+              <p className="text-secondary">
                 Don't have an account? <Link to={"/signup"}>Sign Up</Link>
               </p>
             </div>

@@ -85,12 +85,12 @@ class SignUp extends Component {
             <div className="col col-lg-2" />
             <div className="col-md-auto text-center">
               {this.renderRedirect()}
-              <i className="fas fa-user" />
+              <i className="fas fa-user text-secondary" />
               <br />
-              <h5>Sign Up</h5>
+              <h5 className="text-secondary">Sign Up</h5>
               {signUpForm}
               {error && <p>{error.message}</p>}
-              <p>
+              <p className="text-secondary">
                 Already have an account? <Link to={"/signin"}>Sign In</Link>
               </p>
             </div>

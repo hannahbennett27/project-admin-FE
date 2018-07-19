@@ -7,9 +7,9 @@
   width: 150px;
   height: 150px;
   margin: -75px 0 0 -75px;
-  border: 16px solid #f3f3f3;
+  border: 16px solid #00a6be;
   border-radius: 50%;
-  border-top: 16px solid #1e2f3a;
+  border-top: 16px solid #ffb52f;
   width: 120px;
   height: 120px;
   -webkit-animation: spin 2s linear infinite;
@@ -94,8 +94,4 @@ h1 {
 
 .brandicon {
   color: #00a6be;
-}
-
-* {
-  font-family: "Karla", sans-serif;
 }
