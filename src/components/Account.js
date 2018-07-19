@@ -18,7 +18,7 @@ const Account = () => {
 
 const userAcc = (
   <div className="container-fluid bg-white">
-    <div className="sidenav">
+    <div className="sidenav border-right bg-light">
       <ul className="list-unstyled">
         <li className="mb-2 mt-2 text-secondary">Account Page</li>
         <li className="mb-2">

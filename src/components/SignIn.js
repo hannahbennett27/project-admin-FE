@@ -30,6 +30,7 @@ class SignIn extends Component {
           name="email"
           value={email}
           onChange={this.handleChange}
+          autofocus="true"
         />
         <br />
         <input

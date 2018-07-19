@@ -18,7 +18,7 @@ const userNav = (
       <img src={logo} alt="piggy logo" className="navbar-brand logo" />
     </Link>
     <div className="collapse navbar-collapse" id="navbarSupportedContent" />
-    <ul className="navbar-nav navbar-right">
+    <ul className="navbar-nav navbar-right mt-2">
       <li className="nav-item">
         <Link className="text-secondary" to={"/account"}>
           <p>
@@ -39,7 +39,7 @@ const nullUserNav = (
       <img src={logo} alt="piggy logo" className="navbar-brand logo" />
     </Link>
     <div className="collapse navbar-collapse" id="navbarSupportedContent" />
-    <ul className="navbar-nav navbar-right">
+    <ul className="navbar-nav navbar-right mt-2">
       <li className="nav-item">
         <Link className="text-secondary" to={"/signin"}>
           <p>

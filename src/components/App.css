@@ -85,3 +85,17 @@ h1 {
   color: #818181;
   display: block;
 }
+
+/* homepage */
+
+.brandfont {
+  color: #ffb52f;
+}
+
+.brandicon {
+  color: #00a6be;
+}
+
+* {
+  font-family: "Karla", sans-serif;
+}
