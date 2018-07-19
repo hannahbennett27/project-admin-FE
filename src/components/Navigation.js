@@ -19,11 +19,6 @@ const userNav = (
     </Link>
     <div className="collapse navbar-collapse" id="navbarSupportedContent" />
     <ul className="navbar-nav navbar-right">
-      <li className="nav-item">
-        <Link to={"/account"}>
-          <button className="btn btn-outline-dark mr-2">Account</button>
-        </Link>
-      </li>
       <ul className="navbar-nav mr-auto">
         <SignOut />
       </ul>
@@ -39,19 +34,19 @@ const nullUserNav = (
     <div className="collapse navbar-collapse" id="navbarSupportedContent" />
     <ul className="navbar-nav navbar-right">
       <li className="nav-item">
-        <Link to={"/signin"}>
-          <button className="btn btn-outline-dark mr-2">
+        <Link className="text-secondary" to={"/signin"}>
+          <p>
             {" "}
             Sign In <i className="fas fa-sign-in-alt" />
-          </button>
+          </p>
         </Link>
       </li>
-      <li className="nav-item">
-        <Link to={"/signup"}>
-          <button className="btn btn-outline-dark">
+      <li className="nav-item ml-2">
+        <Link className="text-secondary" to={"/signup"}>
+          <p>
             {" "}
             Register <i className="fas fa-user-plus" />{" "}
-          </button>
+          </p>
         </Link>
       </li>
     </ul>
