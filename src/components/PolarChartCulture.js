@@ -1,12 +1,11 @@
-import React, { Component } from 'react';
-import { Polar } from 'react-chartjs-2';
-import Select from 'react-select';
-import 'react-select/dist/react-select.css';
-import * as culturePolarData from '../dataAnalysis/generateCulturePolarData';
+import React, { Component } from "react";
+import { Polar } from "react-chartjs-2";
+import "react-select/dist/react-select.css";
+import * as culturePolarData from "../dataAnalysis/generateCulturePolarData";
 
 class PolarChartCulture extends Component {
   state = {
-    selectedChoice: 'card'
+    selectedChoice: "card"
   };
 
   render() {
@@ -25,29 +24,74 @@ class PolarChartCulture extends Component {
       <div className="jumbotron bg-light">
         <h1>Cultural Decisions</h1>
         <Polar data={totals} />
-        <div className="mb-5">
-          {choices ? (
-            <Select
-              className="student-select mx-auto"
-              name="culture-filter"
-              value={this.state.selectedChoice}
-              onChange={this.handleChange}
-              options={choices.map(choice => {
-                return { value: choice, label: choice };
-              })}
-            />
-          ) : null}
+        <div class="btn-group btn-group-toggle mt-4">
+          <label class="btn btn-light">
+            <input
+              checked
+              type="radio"
+              name="options"
+              id="option1"
+              autocomplete="off"
+              onClick={this.handleClick}
+              value="card"
+            />{" "}
+            Card
+          </label>
+          <label class="btn btn-light">
+            <input
+              checked
+              type="radio"
+              name="options"
+              id="option2"
+              autocomplete="off"
+              onClick={this.handleClick}
+              value="careerProgression"
+            />{" "}
+            Career Progression
+          </label>
+          <label class="btn btn-light">
+            <input
+              checked
+              type="radio"
+              name="options"
+              id="option3"
+              autocomplete="off"
+              onClick={this.handleClick}
+              value="clothing"
+            />{" "}
+            Clothing
+          </label>
+          <label class="btn btn-light">
+            <input
+              checked
+              type="radio"
+              name="options"
+              id="option4"
+              autocomplete="off"
+              onClick={this.handleClick}
+              value="night"
+            />{" "}
+            Night
+          </label>
+          <label class="btn btn-light">
+            <input
+              checked
+              type="radio"
+              name="options"
+              id="option5"
+              autocomplete="off"
+              onClick={this.handleClick}
+              value="phone"
+            />{" "}
+            Phone
+          </label>
         </div>
       </div>
     );
   }
 
-  handleChange = selectedChoice => {
-    if (selectedChoice === null) {
-      this.setState({ selectedChoice: 'card' });
-    } else {
-      this.setState({ selectedChoice: selectedChoice.label });
-    }
+  handleClick = e => {
+    this.setState({ selectedChoice: e.target.value });
   };
 }
 
