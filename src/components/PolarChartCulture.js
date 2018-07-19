@@ -1,17 +1,16 @@
-import React, { Component } from "react";
-import { Polar } from "react-chartjs-2";
-import "react-select/dist/react-select.css";
-import * as culturePolarData from "../dataAnalysis/generateCulturePolarData";
+import React, { Component } from 'react';
+import { Polar } from 'react-chartjs-2';
+import 'react-select/dist/react-select.css';
+import * as culturePolarData from '../dataAnalysis/generateCulturePolarData';
 
 class PolarChartCulture extends Component {
   state = {
-    selectedChoice: "card"
+    selectedChoice: 'cardDecision'
   };
 
   render() {
     const { playersData } = this.props;
     const players = Object.keys(playersData);
-    // const choices =
     const { selectedChoice } = this.state;
 
     const totals = culturePolarData.generateTotals(
@@ -22,67 +21,67 @@ class PolarChartCulture extends Component {
 
     return (
       <div className="jumbotron bg-light">
-        <h1>Cultural Decisions</h1>
+        <h1>Social Decisions</h1>
         <Polar data={totals} />
-        <div class="btn-group btn-group-toggle mt-4">
-          <label class="btn btn-light">
+        <div className="btn-group btn-group-toggle mt-4">
+          <label className="btn btn-light">
             <input
-              checked
+              defaultChecked
               type="radio"
               name="options"
               id="option1"
-              autocomplete="off"
+              autoComplete="off"
               onClick={this.handleClick}
-              value="card"
-            />{" "}
+              value="cardDecision"
+            />{' '}
             Card
           </label>
-          <label class="btn btn-light">
+          <label className="btn btn-light">
             <input
-              checked
+              defaultChecked
               type="radio"
               name="options"
               id="option2"
-              autocomplete="off"
+              autoComplete="off"
               onClick={this.handleClick}
-              value="careerProgression"
-            />{" "}
+              value="careerProgressionDecision"
+            />{' '}
             Career Progression
           </label>
-          <label class="btn btn-light">
+          <label className="btn btn-light">
             <input
-              checked
+              defaultChecked
               type="radio"
               name="options"
               id="option3"
-              autocomplete="off"
+              autoComplete="off"
               onClick={this.handleClick}
-              value="clothing"
-            />{" "}
+              value="clothingDecision"
+            />{' '}
             Clothing
           </label>
-          <label class="btn btn-light">
+          <label className="btn btn-light">
             <input
-              checked
+              defaultChecked
               type="radio"
               name="options"
               id="option4"
-              autocomplete="off"
+              autoComplete="off"
               onClick={this.handleClick}
-              value="night"
-            />{" "}
+              value="nightDecision"
+            />{' '}
             Night
           </label>
-          <label class="btn btn-light">
+          <label className="btn btn-light">
             <input
-              checked
+              defaultChecked
               type="radio"
               name="options"
               id="option5"
-              autocomplete="off"
+              autoComplete="off"
               onClick={this.handleClick}
-              value="phone"
-            />{" "}
+              value="phoneDecision"
+            />{' '}
             Phone
           </label>
         </div>

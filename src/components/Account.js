@@ -45,7 +45,7 @@ const userAcc = (
       <div className="col-10">
         <Header />
         <div className="container">
-          <div className="row mt-5">
+          <div className="row mt-3">
             <div className="col-5 jumbotron mt-5 bg-light">
               <NewGame />
             </div>
